@@ -1,0 +1,653 @@
+---
+title: "PR_project"
+author: "Taylor Lindsay"
+date: "4/16/2021"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r imports, include=FALSE}
+# Import Libraries 
+library(multcompView)
+library("ggpubr")
+library(tidyverse)
+library(plyr)
+library(dplyr)
+library(broom)
+library(ggplot2)
+
+# Load Data 
+benthic_data3 <- read.csv('~/PR_project/raw_data3/PRCRMP_Benthic-sessile_data_1999-2020_(updated_4-10-2020).csv', fileEncoding="latin1")
+abundance_data3 <- read.csv('~/PR_project/raw_data3/PRCRMP_Fish-inverts_abundance_data_1999-2020_(updated_04-10-2020).csv', fileEncoding="latin1")
+biomass_data3 <- read.csv('~/PR_project/raw_data3/PRCRMP_Fish-inverts_biomass_data_1999-2020_(updated_04-10-2020).csv', fileEncoding="latin1")
+size_frequency_abundance_data3 <- read.csv('~/PR_project/raw_data3/PRCRMP_Fish-inverts_size-frequency_abundance_data_1999-2020_(updated_10-04-2020).csv', fileEncoding="latin1")
+site_classification_database3 <- read.csv('~/PR_project/raw_data3/PRCRMP_Site_Classification_Database_(updated_3-8-2020).csv', fileEncoding="latin1")
+species_info <- read.csv('~/PR_project/species_info.csv')
+
+# Clean some data 
+abundance_data3$DEPTH.ZONE <- abundance_data3$DEPTH.ZONE %>% 
+  gsub("intermediate", "Intermediate", .) %>%
+  gsub("shallow", "Shallow", .) %>%
+  gsub("very shallow", "Very Shallow", .) %>%
+  gsub("very Shallow", "Very Shallow", .) 
+
+biomass_data3$DEPTH.ZONE <- biomass_data3$DEPTH.ZONE %>% 
+  gsub("intermediate", "Intermediate", .) %>%
+  gsub("shallow", "Shallow", .) %>%
+  gsub("very shallow", "Very Shallow", .) %>%
+  gsub("very Shallow", "Very Shallow", .) 
+
+abundance_data3$SITE.NAME <- abundance_data3$SITE.NAME %>% 
+  gsub("Berbera", "Berbería", .)  %>%
+  gsub("Caa Gorda", "Caña Gorda", .) %>%
+  gsub("Windward Reef ", "Windward Reef", .) %>%
+  gsub("West Caballo Blanco (2001)", "West Caballo Blanco", .) %>%
+  gsub("Maria Langa 5m ", "Maria Langa 5m", .) %>%
+  gsub("Canal Luis Pea", "Canal Luis Peña", .) 
+
+biomass_data3$SITE.NAME <- biomass_data3$SITE.NAME %>% 
+  gsub("Berbera", "Berbería", .)  %>%
+  gsub("Caa Gorda", "Caña Gorda", .) %>%
+  gsub("Windward Reef ", "Windward Reef", .) %>%
+  gsub("West Caballo Blanco (2001)", "West Caballo Blanco", .) %>%
+  gsub("Maria Langa 5m ", "Maria Langa 5m", .) %>%
+  gsub("Canal Luis Pea", "Canal Luis Peña", .) 
+
+```
+
+```{r functions, include = FALSE}
+
+# This function creates a total column by finding the sum of the data columns 
+total_column <- function(data) {
+  df1 <- data[rowSums(is.na(data)) != ncol(data) - 7, ] #removes rows with all NA values 
+  df2 <- df1 %>%
+    mutate(total = rowSums( df1[,-c(1:7)],na.rm=TRUE)) #adds column of totals that excludes NAs 
+  return(df2)} 
+
+# This function makes an data frame showing summary statistics for each year 
+year_summary <- function(data) {
+  data <- data %>%filter(!is.na(total))
+  df_year <- ddply(data, "YEAR", summarise, 
+                   N    = length(total),
+                   mean = mean(total),
+                   sd   = sd(total),
+                   se   = sd / sqrt(N))
+  return(df_year)}  
+
+# Appends data frames to the bottom of a data frame 
+df_append <- function(df) {
+  do.call(rbind, lapply(df, function(x) {
+    cbind(get(x), source = x)}))}
+
+# Runs a linear model on two variables and finds the p-value 
+p_val <- function(data, x, y) {
+  model <- lm(x ~ y, data = data)
+  p_value <- glance(model)$p.value
+  p_value2 <- signif(p_value,3)
+  return(p_value2)}
+
+# Runs a linear model on two variables and finds the R^2 value 
+r_sqr <- function(data, x, y) {
+  model <- lm(x ~ y, data = data)
+  r_squared <- glance(model)$r.squared
+  r_squared2 <- signif(r_squared,3)
+  return(r_squared2) }
+
+# This function runs a tukey post-hoc test and pulls out the Group letters 
+generate_label_df <- function(ANOVA_model, variable){
+  TUKEY <- TukeyHSD(ANOVA_model) # save tukey output 
+  Tukey.levels <- TUKEY[[variable]][,4] #extract labels from tukey 
+  Tukey.labels <- data.frame(multcompLetters(Tukey.levels)['Letters']) #get letters from tukey 
+  Tukey.labels$treatment=rownames(Tukey.labels) #label rows as group names 
+  Tukey.labels=Tukey.labels[order(Tukey.labels$treatment) , ] 
+  return(Tukey.labels)
+}
+
+```
+
+# Parrot Fish 
+
+```{r Parrot fish , warning = FALSE, message = FALSE, echo = FALSE, out.width="80%" }
+# Save just the Parrot fish species info to a new df
+parrotfish_species <- species_info %>%
+  filter(c(Com.Eco == "Parrotfishes" | Family == "Scaridae"))
+
+# Calculate Parrot fish abundance summaries 
+parrotfish_abundance <- abundance_data3 %>%
+  select(c(1:7, parrotfish_species[,2])) 
+parrotfish_abundance <- total_column(parrotfish_abundance)
+parrotfish_abundance_year <- year_summary(parrotfish_abundance)
+
+# Calculate Parrot fish biomass summaries 
+parrotfish_biomass <- biomass_data3 %>%
+  select(c(1:7, one_of(parrotfish_species[,2]))) 
+parrotfish_biomass <- total_column(parrotfish_biomass) 
+parrotfish_biomass_year <- year_summary(parrotfish_biomass)
+
+# Combine Parrot fish summary table into one df 
+parrotfish_summary <- full_join(parrotfish_abundance_year, parrotfish_biomass_year, by = "YEAR", suffix = c(".abundance", ".biomass"))
+
+```
+
+### Mean parrotfish abundance over time w/ linear model: 
+
+```{r Parrot fish abundance, warning = FALSE, message = FALSE, echo = FALSE, out.width="80%" }
+# Graphing Parrot Fish 
+ggplot(parrotfish_abundance_year, aes(YEAR, mean)) +
+  geom_line(linetype = "dashed", color="red") +
+  geom_point() +
+  theme_light() + 
+  #  facet_wrap(~REGION) +
+  geom_smooth(method = "lm", se = FALSE, color="red") +
+  labs(y="Mean Abundance (per 30m^2)", x = "Year") +
+  geom_errorbar(aes(ymin=mean-se, ymax=mean+se), width=.2,
+                position=position_dodge(0.05))
+```
+
+```{r parrotfish model, echo = FALSE}
+model_parrotfish_abundance <- lm(total ~ YEAR, data = parrotfish_abundance)
+summary(model_parrotfish_abundance)
+```
+
+### Mean parrotfish biomass over time w/ linear model: 
+
+```{r Parrot fish biomass, warning = FALSE, message = FALSE, echo = FALSE, out.width="80%" }
+ggplot(parrotfish_biomass_year, aes(YEAR, mean)) +
+  geom_line(linetype = "dashed", color="red") +
+  geom_point() +
+  theme_light() + 
+  #  facet_wrap(~REGION) +
+  geom_smooth(method = "lm", se = FALSE, color="red") +
+  labs(y="Mean Biomass (g/60m^2)", x = "Year") +
+  geom_errorbar(aes(ymin=mean-se, ymax=mean+se), width=.2,
+                position=position_dodge(0.05))
+```
+
+```{r}
+model_parrotfish_biomass <- lm(total ~ YEAR, data = parrotfish_biomass)
+summary(model_parrotfish_biomass)
+```
+
+### Mean Parrotfish Biomass & abundance on same plot: 
+
+```{r parrotfish 2 axis, warning = FALSE, error = TRUE, message = FALSE, echo = FALSE, out.width="80%"  }
+
+ggplot(parrotfish_summary, aes(x=YEAR))+
+  geom_line(aes(y=mean.abundance * 100),linetype = "dashed", color = "blue") +
+  geom_line(aes(y=mean.biomass), linetype = "dashed", color = "red") +
+  theme_light() +
+  scale_y_continuous(name = "Biomass (red)", sec.axis = sec_axis(trans=~./100, name = "Abundance (blue)"))
+
+```
+
+# Grouper
+
+```{r grouper abundance, warning = FALSE, message = FALSE, echo = FALSE, out.width="80%"}
+
+# Save just the snapper species info to a new df
+grouper_species <- species_info %>%
+  filter(Com.Eco == "Groupers")
+
+# Calculate Grouper abundance summaries 
+grouper_abundance <- abundance_data3 %>%
+  select(c(1:7, one_of(grouper_species[,2])))
+grouper_abundance <- total_column(grouper_abundance)
+grouper_abundance_year <- year_summary(grouper_abundance)
+
+# Calculate Grouper biomass summaries 
+grouper_biomass <- biomass_data3 %>%
+  select(c(1:7, one_of(grouper_species[,2]))) 
+grouper_biomass <- total_column(grouper_biomass) 
+grouper_biomass_year <- year_summary(grouper_biomass)
+
+# Combine Grouper summary table into one df 
+grouper_summary <- full_join(grouper_abundance_year, grouper_biomass_year, by = "YEAR", suffix = c(".abundance", ".biomass"))
+
+```
+
+### Mean grouper abundance over time w/ linear model: 
+
+```{r Grouper abundance, warning = FALSE, message = FALSE, echo = FALSE, out.width="80%"}
+# Plot 
+ggplot(grouper_abundance_year, aes(YEAR, mean)) +
+  geom_line(linetype = "dashed", color="red") +
+  geom_point() +
+  theme_light() + 
+  #  facet_wrap(~REGION) +
+  geom_smooth(method = "lm", se = FALSE, color="red") +
+  labs(y="Mean Abundance (per 30m^2)", x = "Year") +
+  geom_errorbar(aes(ymin=mean-se, ymax=mean+se), width=.2,
+                position=position_dodge(0.05))
+```
+
+```{r}
+model_grouper_abundance <- lm(total ~ YEAR, data = grouper_abundance)
+summary(model_grouper_abundance)
+```
+
+### Mean grouper biomass over time w/ linear model: 
+
+```{r Grouper biomass, warning = FALSE, message = FALSE, echo = FALSE, out.width="80%"}
+#plot grouper biomass
+ggplot(grouper_biomass_year, aes(YEAR, mean)) +
+  geom_line(linetype = "dashed", color="red") +
+  geom_point() +
+  theme_light() + 
+  #  facet_wrap(~REGION) +
+  geom_smooth(method = "lm", se = FALSE, color="red") +
+  labs(y="Mean Biomass (g/60m^2)", x = "Year") +
+  geom_errorbar(aes(ymin=mean-se, ymax=mean+se), width=.2,
+                position=position_dodge(0.05))
+
+```
+
+```{r}
+model_grouper_biomass <- lm(total ~ YEAR, data = grouper_biomass)
+summary(model_grouper_biomass)
+```
+
+### Mean Parrotfish Biomass & abundance on same plot: 
+
+```{r grouper 2 axis, warning = FALSE, error = TRUE, message = FALSE, echo = FALSE, out.width="80%"  }
+
+ggplot(grouper_summary, aes(x=YEAR))+
+  geom_line(aes(y=mean.abundance * 1000),linetype = "dashed", color = "blue") +
+  geom_line(aes(y=mean.biomass), linetype = "dashed", color = "red") +
+  theme_light() +
+  scale_y_continuous(name = "Biomass (red)", sec.axis = sec_axis(trans=~./1000, name = "Abundance (blue)"))
+```
+
+# Snapper
+
+```{r Snapper abundance, warning = FALSE, message = FALSE, echo = FALSE, out.width="80%"}
+
+# Save just the snapper species info to a new df
+snapper_species <- species_info %>%
+  filter(Com.Eco == "Snappers")
+
+# Calculate snapper abundance summary 
+snapper_abundance <- abundance_data3 %>%
+  select(c(1:7, one_of(snapper_species[,2])))
+snapper_abundance <- total_column(snapper_abundance)
+snapper_abundance_year <- year_summary(snapper_abundance)
+
+# Calculate snapper biomass summary 
+snapper_biomass <- biomass_data3 %>%
+  select(c(1:7, one_of(snapper_species[,2]))) 
+snapper_biomass <- total_column(snapper_biomass) 
+snapper_biomass_year <- year_summary(snapper_biomass)
+
+# Combine snapper summary tables into one df 
+snapper_summary <- full_join(snapper_abundance_year, snapper_biomass_year, by = "YEAR", suffix = c(".abundance", ".biomass"))
+
+```
+ 
+### Mean snapper abundance over time w/ linear model:
+
+```{r snapper abundance, warning = FALSE, message = FALSE, echo = FALSE, out.width="80%" }
+# Plot 
+ggplot(snapper_abundance_year, aes(YEAR, mean)) +
+  geom_line(linetype = "dashed", color="red") +
+  geom_point() +
+  theme_light() + 
+  #  facet_wrap(~REGION) +
+  geom_smooth(method = "lm", se = FALSE, color="red") +
+  labs(y="Mean Abundance (per 30m^2)", x = "Year") +
+  geom_errorbar(aes(ymin=mean-se, ymax=mean+se), width=.2,
+                position=position_dodge(0.05))
+```
+
+```{r}
+model_snapper_abundance <- lm(total ~ YEAR, data = snapper_abundance)
+summary(model_snapper_abundance)
+```
+
+### Mean snapper biomass over time w/ linear model: 
+
+```{r snapper biomass, warning = FALSE, message = FALSE, echo = FALSE, out.width="80%" }
+ggplot(snapper_biomass_year, aes(YEAR, mean)) +
+  geom_line(linetype = "dashed", color="red") +
+  geom_point() +
+  theme_light() + 
+  #  facet_wrap(~REGION) +
+  geom_smooth(method = "lm", se = FALSE, color="red") +
+  labs(y="Mean Biomass (g/60m^2)", x = "Year") +
+  geom_errorbar(aes(ymin=mean-se, ymax=mean+se), width=.2,
+                position=position_dodge(0.05))
+```
+
+```{r}
+model_snapper_biomass <- lm(total ~ YEAR, data = snapper_biomass)
+summary(model_snapper_biomass)
+```
+
+### Mean Parrotfish Biomass & abundance on same plot: 
+
+```{r snapper 2 axis, warning = FALSE, error = TRUE, message = FALSE, echo = FALSE, out.width="80%"  }
+ggplot(snapper_summary, aes(x=YEAR))+
+  geom_line(aes(y=mean.abundance * 10000),linetype = "dashed", color = "blue") +
+  geom_line(aes(y=mean.biomass), linetype = "dashed", color = "red") +
+  theme_light() +
+  scale_y_continuous(name = "Biomass (red)", sec.axis = sec_axis(trans=~./10000, name = "Abundance (blue)"))
+```
+
+# All species 
+
+```{r all fish, warning = FALSE, message = FALSE, echo = FALSE, out.width="80%" }
+# Save all fish species info to a new df
+fish_species <- species_info %>%
+  filter(Class == "Actinopterygii" | Class == "Elasmobranchii")
+
+# Calculate abundance summary for all fish 
+fish_abundance <- abundance_data3 %>%
+  select(c(1:7, one_of(fish_species[,2])))
+fish_abundance <- total_column(fish_abundance)
+fish_abundance_year <- year_summary(fish_abundance)
+
+# Calculate biomass summary for all fish 
+fish_biomass <- biomass_data3 %>%
+  select(c(1:7, one_of(fish_species[,2]))) 
+fish_biomass <- total_column(fish_biomass) 
+fish_biomass_year <- year_summary(fish_biomass)
+
+# Create summary tables for all fish data 
+fish_summary <- full_join(fish_abundance_year, fish_biomass_year, by = "YEAR", suffix = c(".abundance", ".biomass"))
+
+```
+
+### Mean abundance of all fish over time w/ linear model: 
+
+```{r all fish abundance, warning = FALSE, error = TRUE, message = FALSE, echo = FALSE, out.width="80%" }
+# Plot 
+ggplot(fish_abundance_year, aes(YEAR, mean)) +
+  geom_line(linetype = "dashed", color="red") +
+  geom_point() +
+  theme_light() + 
+  #  facet_wrap(~REGION) +
+  geom_smooth(method = "lm", se = FALSE, color="red") +
+  labs(y="Mean Abundance (per 30m^2)", x = "Year") +
+  geom_errorbar(aes(ymin=mean-se, ymax=mean+se), width=.2,
+                position=position_dodge(0.05))
+```
+
+```{r}
+model_fish_abundance <- lm(total ~ YEAR, data = fish_abundance)
+summary(model_fish_abundance)
+```
+
+### Mean Biomass of all fish over time w/ linear model: 
+
+```{r all fish biomass, warning = FALSE, error = TRUE, message = FALSE, echo = FALSE, out.width="80%" }
+ggplot(fish_biomass_year, aes(YEAR, mean)) +
+  geom_line(linetype = "dashed", color="red") +
+  geom_point() +
+  theme_light() + 
+  #  facet_wrap(~REGION) +
+  geom_smooth(method = "lm", se = FALSE, color="red") +
+  labs(y="Mean Biomass (g/60m^2)", x = "Year") +
+  geom_errorbar(aes(ymin=mean-se, ymax=mean+se), width=.2,
+                position=position_dodge(0.05))
+```
+
+```{r}
+model_fish_biomass <- lm(total ~ YEAR, data = fish_biomass)
+summary(model_fish_biomass)
+```
+
+### Mean Biomass & abundance of all fish over time plotted on same axis 
+
+```{r fish 2 axis, warning = FALSE, error = TRUE, message = FALSE, echo = FALSE, out.width="80%"  }
+
+ggplot(fish_summary, aes(x=YEAR))+
+  geom_line(aes(y=mean.abundance * 100),linetype = "dashed", color = "blue") +
+  geom_line(aes(y=mean.biomass), linetype = "dashed", color = "red") +
+  theme_light() +
+  scale_y_continuous(name = "Biomass (red)", sec.axis = sec_axis(trans=~./100, name = "Abundance (blue)"))
+```
+
+### Snapper, Grouper & Parrotfish abundance on same axis: 
+
+```{r 3 species abundance, warning = FALSE, error = TRUE, message = FALSE, echo = FALSE, out.width="80%" }
+fish_abundance_summary <- df_append(c("snapper_abundance_year", "parrotfish_abundance_year", "grouper_abundance_year"))
+
+ggplot(fish_abundance_summary, aes(YEAR, mean, color = source))+
+  geom_line(linetype = "dashed") +
+  geom_point(color="black") +
+  theme_light() +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(y="Mean Abundance (per 30m^2)", x = "Year") +
+  geom_errorbar(aes(ymin=mean-se, ymax=mean+se), width=.2,
+                position=position_dodge(0.05), color = "black")
+```
+
+### Snapper, Grouper & Parrotfish biomass on same axis: 
+
+```{r total biomass, warning = FALSE, error = TRUE, message = FALSE, echo = FALSE, out.width="80%"  } 
+
+fish_biomass_summary <- df_append(c("snapper_biomass_year", "parrotfish_biomass_year", "grouper_biomass_year"))
+
+ggplot(fish_biomass_summary, aes(YEAR, mean, color = source))+
+  geom_line(linetype = "dashed") +
+  geom_point(color="black") +
+  theme_light() +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(y="Mean Biomass (g/60m^2)", x = "Year") +
+  geom_errorbar(aes(ymin=mean-se, ymax=mean+se), width=.2,
+                position=position_dodge(0.05), color = "black")
+```
+
+# Exploring the effects of depth:  
+
+```{r depth, warning = FALSE, error = TRUE, message = FALSE, echo = FALSE, out.width="80%"  }
+
+# Parrot Fish 
+parrotfish_abundance.aov <- aov(total ~ DEPTH.ZONE, data = parrotfish_abundance)
+P_abundance_labels <- generate_label_df(parrotfish_abundance.aov, "DEPTH.ZONE")
+
+ggplot(parrotfish_abundance, aes(x = DEPTH.ZONE, y=total)) +
+  geom_boxplot() +
+  theme_light() +
+  labs(y="Mean Abundance (per 30m^2)", x = "Depth Zone", title = "Parrot fish Abundance ANOVA") +
+  stat_summary(geom = 'text', label = P_abundance_labels$Letters, fun.y = max, vjust = -1)
+
+# Parrot fish biomass  
+parrotfish_biomass.aov <- aov(total ~ DEPTH.ZONE, data = parrotfish_biomass)
+P_biomass_labels <- generate_label_df(parrotfish_biomass.aov, "DEPTH.ZONE")
+
+ggplot(parrotfish_biomass, aes(x = DEPTH.ZONE, y=total)) +
+  geom_boxplot() +
+  theme_light() +
+  labs(y="Mean Biomass (g/60m^2)", x = "Depth Zone", title = "Parrot fish Biomass ANOVA") +
+  stat_summary(geom = 'text', label = P_biomass_labels$Letters, fun.y = max, vjust = -1)
+
+# Grouper  Abundance 
+grouper_abundance.aov <- aov(total ~ DEPTH.ZONE, data = grouper_abundance)
+G_abundance_labels <- generate_label_df(grouper_abundance.aov, "DEPTH.ZONE")
+
+ggplot(grouper_abundance, aes(x = DEPTH.ZONE, y=total)) +
+  geom_boxplot() +
+  theme_light() +
+  labs(y="Mean Abundance (per 30m^2)", x = "Depth Zone", title = "grouper Abundance ANOVA") +
+  stat_summary(geom = 'text', label = G_abundance_labels$Letters, fun.y = max, vjust = -1)
+
+# Grouper biomass  
+grouper_biomass.aov <- aov(total ~ DEPTH.ZONE, data = grouper_biomass)
+G_biomass_labels <- generate_label_df(grouper_biomass.aov, "DEPTH.ZONE")
+
+ggplot(grouper_biomass, aes(x = DEPTH.ZONE, y=total)) +
+  geom_boxplot() +
+  theme_light() +
+  labs(y="Mean Biomass (g/60m^2)", x = "Depth Zone", title = "grouper Biomass ANOVA") +
+  stat_summary(geom = 'text', label = G_biomass_labels$Letters, fun.y = max, vjust = -1)
+
+
+# Snapper abundance 
+snapper_abundance.aov <- aov(total ~ DEPTH.ZONE, data = snapper_abundance)
+S_abundance_labels <- generate_label_df(snapper_abundance.aov, "DEPTH.ZONE")
+
+ggplot(snapper_abundance, aes(x = DEPTH.ZONE, y=total)) +
+  geom_boxplot() +
+  theme_light() +
+  labs(y="Mean Abundance (per 30m^2)", x = "Depth Zone", title = "snapper Abundance ANOVA") +
+  stat_summary(geom = 'text', label = S_abundance_labels$Letters, fun.y = max, vjust = -1)
+
+#  Snapper Biomass
+snapper_biomass.aov <- aov(total ~ DEPTH.ZONE, data = snapper_biomass)
+S_biomass_labels <- generate_label_df(snapper_biomass.aov, "DEPTH.ZONE")
+
+ggplot(snapper_biomass, aes(x = DEPTH.ZONE, y=total)) +
+  geom_boxplot() +
+  theme_light() +
+  labs(y="Mean Biomass (g/60m^2)", x = "Depth Zone", title = "snapper Biomass ANOVA") +
+  stat_summary(geom = 'text', label = S_biomass_labels$Letters, fun.y = max, vjust = -1)
+```
+
+### ANOVAS comapring depth, year, location 
+
+```{r Multiple factor ANOVAs, message = FALSE}
+# Parrotfish Abundance: 
+parrotfish_abundance_multi.aov <- aov(total ~ DEPTH.ZONE*YEAR*LOCATION, data = parrotfish_abundance)
+summary(parrotfish_abundance_multi.aov)
+# Parrotfish Biomass: 
+parrotfish_biomass_multi.aov <- aov(total ~ DEPTH.ZONE*YEAR*LOCATION, data = parrotfish_biomass)
+summary(parrotfish_biomass_multi.aov)
+
+# Grouper Abundance: 
+grouper_abundance_multi.aov <- aov(total ~ DEPTH.ZONE*YEAR*LOCATION, data = grouper_abundance)
+summary(grouper_abundance_multi.aov)
+# Grouper Biomass: 
+grouper_biomass_multi.aov <- aov(total ~ DEPTH.ZONE*YEAR*LOCATION, data = grouper_biomass)
+summary(grouper_biomass_multi.aov)
+
+# Snapper Abundance: 
+snapper_abundance_multi.aov <- aov(total ~ DEPTH.ZONE*YEAR*LOCATION, data = snapper_abundance)
+summary(snapper_abundance_multi.aov)
+# Snapper Biomass: 
+snapper_biomass_multi.aov <- aov(total ~ DEPTH.ZONE*YEAR*LOCATION, data = snapper_biomass)
+summary(snapper_biomass_multi.aov)
+
+```
+
+# Exploring the effects of MPAs. ANOVA results appear above each graph
+
+```{r MPAs, warning = FALSE, error = TRUE, message = FALSE, echo = FALSE, out.width="80%" }
+
+# isolate MPA data 
+MPA <- site_classification_database3 %>%
+  select(Site.Name, Station.Within.MPA., MPA.Fishing.Restrictions,Coral.Biotope) %>%
+  unique() 
+colnames(MPA)[1] <- "SITE.NAME"
+
+# add MPA data to the two datasets 
+parrotfish_abundance_MPA <- parrotfish_abundance %>% 
+  left_join(., MPA, by = "SITE.NAME") %>%
+  filter(!is.na(Station.Within.MPA.))
+parrotfish_biomass_MPA <- parrotfish_biomass %>% 
+  left_join(., MPA, by = "SITE.NAME") %>%
+  filter(!is.na(Station.Within.MPA.))
+
+
+parrotfish_abundance_MPA.aov <- aov(total ~ Station.Within.MPA., data = parrotfish_abundance_MPA)
+summary(parrotfish_abundance_MPA.aov)
+# plot 
+ggplot(parrotfish_abundance_MPA, aes(x = Station.Within.MPA., y=total)) +
+  geom_boxplot() +
+  theme_light() +
+  labs(y="Mean Abundance (per 30m^2)", x = "MPA Status", title = "Parrotfish Abundance in MPAs") 
+
+# 
+parrotfish_biomass_MPA.aov <- aov(total ~ Station.Within.MPA., data = parrotfish_biomass_MPA)
+summary(parrotfish_biomass_MPA.aov)
+
+ggplot(parrotfish_biomass_MPA, aes(x = Station.Within.MPA., y=total)) +
+  geom_boxplot() +
+  theme_light() +
+  labs(y="Mean Biomass (g/60m^2)", x = "MPA Status", title = "Parrotfish Biomass in MPAs") 
+
+```
+
+```{r grouper MPA, warning = FALSE, error = TRUE, message = FALSE, echo = FALSE, out.width="80%"}
+
+# add MPA data to the two datasets 
+grouper_abundance_MPA <- grouper_abundance %>% 
+  left_join(., MPA, by = "SITE.NAME") %>%
+  filter(!is.na(Station.Within.MPA.))
+grouper_biomass_MPA <- grouper_biomass %>% 
+  left_join(., MPA, by = "SITE.NAME") %>%
+  filter(!is.na(Station.Within.MPA.))
+
+grouper_abundance_MPA.aov <- aov(total ~ Station.Within.MPA., data = grouper_abundance_MPA)
+summary(grouper_abundance_MPA.aov)
+grouper_biomass_MPA.aov <- aov(total ~ Station.Within.MPA., data = grouper_biomass_MPA)
+summary(grouper_biomass_MPA.aov)
+
+# plot 
+ggplot(grouper_abundance_MPA, aes(x = Station.Within.MPA., y=total)) +
+  geom_boxplot() +
+  theme_light() +
+  labs(y="Mean Abundance (per 30m^2)", x = "MPA Status", title = "grouper Abundance in MPAs") 
+grouper_biomass_MPA.aov <- aov(total ~ Station.Within.MPA., data = grouper_biomass_MPA)
+summary(grouper_biomass_MPA.aov)
+ggplot(grouper_biomass_MPA, aes(x = Station.Within.MPA., y=total)) +
+  geom_boxplot() +
+  theme_light() +
+  labs(y="Mean Biomass (g/60m^2)", x = "MPA Status", title = "grouper Biomass in MPAs") 
+
+```
+
+```{r snapper MPA, warning = FALSE, error = TRUE, message = FALSE, echo = FALSE, out.width="80%"}
+
+# add MPA data to the two datasets 
+snapper_abundance_MPA <- snapper_abundance %>% 
+  left_join(., MPA, by = "SITE.NAME") %>%
+  filter(!is.na(Station.Within.MPA.))
+snapper_biomass_MPA <- snapper_biomass %>% 
+  left_join(., MPA, by = "SITE.NAME") %>%
+  filter(!is.na(Station.Within.MPA.))
+
+snapper_abundance_MPA.aov <- aov(total ~ Station.Within.MPA., data = snapper_abundance_MPA)
+summary(snapper_abundance_MPA.aov)
+
+
+# plot 
+ggplot(snapper_abundance_MPA, aes(x = Station.Within.MPA., y=total)) +
+  geom_boxplot() +
+  theme_light() +
+  labs(y="Mean Abundance (per 30m^2)", x = "MPA Status", title = "snapper Abundance in MPAs") 
+snapper_biomass_MPA.aov <- aov(total ~ Station.Within.MPA., data = snapper_biomass_MPA)
+summary(snapper_biomass_MPA.aov)
+ggplot(snapper_biomass_MPA, aes(x = Station.Within.MPA., y=total)) +
+  geom_boxplot() +
+  theme_light() +
+  labs(y="Mean Biomass (g/60m^2)", x = "MPA Status", title = "snapper Biomass in MPAs") 
+```
+
+```{r all fish MPA, warning = FALSE, error = TRUE, message = FALSE, echo = FALSE, out.width="80%"}
+
+# add MPA data to the two datasets 
+fish_abundance_MPA <- fish_abundance %>% 
+  left_join(., MPA, by = "SITE.NAME") %>%
+  filter(!is.na(Station.Within.MPA.))
+fish_biomass_MPA <- fish_biomass %>% 
+  left_join(., MPA, by = "SITE.NAME") %>%
+  filter(!is.na(Station.Within.MPA.))
+
+fish_abundance_MPA.aov <- aov(total ~ Station.Within.MPA., data = fish_abundance_MPA)
+summary(fish_abundance_MPA.aov)
+
+
+# plot 
+ggplot(fish_abundance_MPA, aes(x = Station.Within.MPA., y=total)) +
+  geom_boxplot() +
+  theme_light() +
+  labs(y="Mean Abundance (per 30m^2)", x = "MPA Status", title = "fish Abundance in MPAs") 
+fish_biomass_MPA.aov <- aov(total ~ Station.Within.MPA., data = fish_biomass_MPA)
+summary(fish_biomass_MPA.aov)
+ggplot(fish_biomass_MPA, aes(x = Station.Within.MPA., y=total)) +
+  geom_boxplot() +
+  theme_light() +
+  labs(y="Mean Biomass (g/60m^2)", x = "MPA Status", title = "fish Biomass in MPAs") 
+```
+
+
