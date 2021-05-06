@@ -12,11 +12,15 @@ Ph.D. Student, University of Rhode Island
 
 # CONTENTS 
 
-raw_data2 - Version 2 of the raw data 
-raw_data3 - Version 3 of the raw data 
-data_analysis - Contains the R, R markdown, and PDF versions of the exploratory analysis of the dataset 
-graphs - Contains JPG copies of the graphs used in the report 
-PR_Fish_Report.pdf - The final draft of the report 
+*raw_data2* - Version 2 of the raw data 
+
+*raw_data3* - Version 3 of the raw data 
+
+*data_analysis* - Contains the R, R markdown, and PDF versions of the exploratory analysis of the dataset 
+
+*graphs* - Contains JPG copies of the graphs used in the report 
+
+*PR_Fish_Report.pdf* - The final draft of the report 
 
 # DATA AQUISITION 
 
