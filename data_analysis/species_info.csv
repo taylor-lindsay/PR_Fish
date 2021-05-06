@@ -1,0 +1,544 @@
+"","genus_species","Phylum","Class","Order","Family","Genus","Species","Com-Eco","Benthic Indicator"
+"1","Abudefduf.saxatilis","Chordata","Actinopterygii","Perciformes","Pomacentridae","Abudefduf","saxatilis","",NA
+"2","Abudefduf.taurus","Chordata","Actinopterygii","Perciformes","Pomacentridae","Abudefduf","taurus","",NA
+"3","Acanthemblemaria.aspera","Chordata","Actinopterygii","Perciformes","Chaenopsidae","Acanthemblemaria","aspera","",NA
+"4","Acanthemblemaria.chaplini","Chordata","Actinopterygii","Perciformes","Chaenopsidae","Acanthemblemaria","chaplini","",NA
+"5","Acanthemblemaria.maria","Chordata","Actinopterygii","Perciformes","Chaenopsidae","Acanthemblemaria","maria","",NA
+"6","Acanthemblemaria.spinosa","Chordata","Actinopterygii","Perciformes","Chaenopsidae","Acanthemblemaria","spinosa","",NA
+"7","Acanthostracion.polygonius","Chordata","Actinopterygii","Tetraodontiformes","Ostraciidae","Acanthostracion","polygonia","",NA
+"8","Acanthostracion.quadricornis","Chordata","Actinopterygii","Tetraodontiformes","Ostraciidae","Acanthostracion","quadricornis","",NA
+"9","Acanthurus.chirurgus","Chordata","Actinopterygii","Perciformes","Acanthuridae","Acanthurus","chirurgus","",NA
+"10","Acanthurus.coeruleus","Chordata","Actinopterygii","Perciformes","Acanthuridae","Acanthurus","coeruleus","",NA
+"11","Acanthurus.tractus..bahianus.","Chordata","Actinopterygii","Perciformes","Acanthuridae","Acanthurus","tractus (bahianus)","",NA
+"12","Aetobatus.narinari","Chordata","Elasmobranchii","Myliobatiformes","Myliobatidae","Aetobatus","narinari","",NA
+"13","Aluterus.scriptus","Chordata","Actinopterygii","Tetraodontiformes","Monacanthidae","Aluterus","scriptus","",NA
+"14","Aluterus.spp.","Chordata","Actinopterygii","Tetraodontiformes","Monacanthidae","Aluterus","","",NA
+"15","Amblycirrhitus.pinos","Chordata","Actinopterygii","Perciformes","Cirrhitidae","Amblycirrhitus","pinos","",NA
+"16","Ancylomenes.pedersoni","Arthropoda","Malacostraca","Decapoda","Palaemonidae","Ancylomenes","pedersoni","",NA
+"17","Anisotremus.surinamensis","Chordata","Actinopterygii","Perciformes","Haemulidae","Anisotremus","surinamensis","",NA
+"18","Anisotremus.virginicus","Chordata","Actinopterygii","Perciformes","Haemulidae","Anisotremus","virginicus","",NA
+"19","Anomura.spp.","Arthropoda","Malacostraca","Decapoda","Anomura","","","",NA
+"20","Apogon.maculatus","Chordata","Actinopterygii","Perciformes","Apogonidae","Apogon","maculatus","",NA
+"21","Apogon.spp.","Chordata","Actinopterygii","Perciformes","Apogonidae","Apogon","","",NA
+"22","Apogon.townsendi","Chordata","Actinopterygii","Perciformes","Apogonidae","Apogon","townsendi","",NA
+"23","Astrophyton.muricatum","Echinodermata","Ophiuroidea","Euryalida","Gorgonocephalidae","Astrophyton","muricatum","",NA
+"24","Aulostomus.maculatus","Chordata","Actinopterygii","Syngnathiformes","Aulostomidae","Aulostomus","maculatus","",NA
+"25","Balistes.vetula","Chordata","Actinopterygii","Tetraodontiformes","Balistidae","Balistes","vetula","",NA
+"26","Blenniidae.spp.","Chordata","Actinopterygii","Perciformes","Blenniidae","","","",NA
+"27","Bodianus.rufus","Chordata","Actinopterygii","Perciformes","Labridae","Bodianus","rufus","",NA
+"28","Bothus.lunatus","Chordata","Actinopterygii","Pleuronectiformes","Bothidae","Bothus","lunatus","",NA
+"29","Calamus.calamus","Chordata","Actinopterygii","Perciformes","Sparidae","Calamus","calamus","",NA
+"30","Calamus.pennatula","Chordata","Actinopterygii","Perciformes","Sparidae","Calamus","pennatula","",NA
+"31","Calamus.spp.","Chordata","Actinopterygii","Perciformes","Sparidae","Calamus","","",NA
+"32","Cantherhines.macrocerus","Chordata","Actinopterygii","Tetraodontiformes","Monacanthidae","Cantherhines","macrocerus","",NA
+"33","Cantherhines.pullus","Chordata","Actinopterygii","Tetraodontiformes","Monacanthidae","Cantherhines","pullus","",NA
+"34","Canthidermis.sufflamen","Chordata","Actinopterygii","Tetraodontiformes","Balistidae","Canthidermis","sufflamen","",NA
+"35","Canthigaster.rostrata","Chordata","Actinopterygii","Tetraodontiformes","Tetraodontidae","Canthigaster","rostrata","",NA
+"36","Carangoides.bartholomaei","Chordata","Actinopterygii","Perciformes","Carangidae","Carangoides","bartholomaei","",NA
+"37","Caranx.crysos","Chordata","Actinopterygii","Perciformes","Carangidae","Caranx","crysos","",NA
+"38","Caranx.hippos","Chordata","Actinopterygii","Perciformes","Carangidae","Caranx","hippos","",NA
+"39","Caranx.latus","Chordata","Actinopterygii","Perciformes","Carangidae","Caranx","latus","",NA
+"40","Caranx.lugubris","Chordata","Actinopterygii","Perciformes","Carangidae","Caranx","lugubris","",NA
+"41","Caranx.ruber","Chordata","Actinopterygii","Perciformes","Carangidae","Caranx","ruber","",NA
+"42","Carcharhinus.perezii","Chordata","Elasmobranchii","Carcharhiniformes","Carcharhinidae","Carcharhinus","perezi","",NA
+"43","Carpilius.corallinus","Arthropoda","Malacostraca","Decapoda","Carpiliidae","Carpilius","corallinus","",NA
+"44","Centropyge.argi","Chordata","Actinopterygii","Perciformes","Pomacanthidae","Centropyge","argi","",NA
+"45","Cephalopholis.cruentata","Chordata","Actinopterygii","Perciformes","Serranidae","Cephalopholis","cruentata","Groupers",NA
+"46","Cephalopholis.fulva","Chordata","Actinopterygii","Perciformes","Serranidae","Cephalopholis","fulva","Groupers",NA
+"47","Chaenopsis.ocellata","Chordata","Actinopterygii","Perciformes","Chaenopsidae","Chaenopsis","ocellata","",NA
+"48","Chaetodipterus.faber","Chordata","Actinopterygii","Perciformes","Ephippidae","Chaetodipterus","faber","",NA
+"49","Chaetodon.capistratus","Chordata","Actinopterygii","Perciformes","Chaetodontidae","Chaetodon","capistratus","",NA
+"50","Chaetodon.ocellatus","Chordata","Actinopterygii","Perciformes","Chaetodontidae","Chaetodon","ocellatus","",NA
+"51","Chaetodon.sedentarius","Chordata","Actinopterygii","Perciformes","Chaetodontidae","Chaetodon","sedentarius","",NA
+"52","Chaetodon.striatus","Chordata","Actinopterygii","Perciformes","Chaetodontidae","Chaetodon","striatus","",NA
+"53","Chromis.cyanea","Chordata","Actinopterygii","Perciformes","Pomacentridae","Chromis","cyanea","",NA
+"54","Chromis.insolata","Chordata","Actinopterygii","Perciformes","Pomacentridae","Chromis","insolata","",NA
+"55","Chromis.multilineata","Chordata","Actinopterygii","Perciformes","Pomacentridae","Chromis","multilineata","",NA
+"56","Chromis.spp.","Chordata","Actinopterygii","Perciformes","Pomacentridae","Chromis","","",NA
+"57","Clepticus.parrae","Chordata","Actinopterygii","Perciformes","Labridae","Clepticus","parrae","",NA
+"58","Coralliophila.caribaea","Mollusca","Gastropoda","Neogastropoda","Muricidae","Coralliophila","caribaea","",NA
+"59","Coralliophila.spp.","Mollusca","Gastropoda","Neogastropoda","Muricidae","Coralliophila","","",NA
+"60","Coryphopterus.glaucofraenum","Chordata","Actinopterygii","Perciformes","Gobiidae","Coryphopterus","glaucofraenum","",NA
+"61","Coryphopterus.lipernes","Chordata","Actinopterygii","Perciformes","Gobiidae","Coryphopterus","lipernes","",NA
+"62","Coryphopterus.personatus","Chordata","Actinopterygii","Perciformes","Gobiidae","Coryphopterus","personatus","",NA
+"63","Coryphopterus.spp.","Chordata","Actinopterygii","Perciformes","Gobiidae","Coryphopterus","","",NA
+"64","Cryptotomus.roseus","Chordata","Actinopterygii","Perciformes","Scaridae","Cryptotomus","roseus","",NA
+"65","Ctenogobius.saepepallens","Chordata","Actinopterygii","Perciformes","Gobiidae","Ctenogobius","saepepallens","",NA
+"66","Ctenoides.scaber","Mollusca","Bivalvia","Limida","Limidae","Ctenoides","scaber","",NA
+"67","Cyphoma.gibbosum","Mollusca","Gastropoda","Littorinimorpha","Ovulidae","Cyphoma","gibbosum","",NA
+"68","Damithrax.spinosissimus","Arthropoda","Malacostraca","Decapoda","Mithracidae","Damithrax","spinosissimus","",NA
+"69","Decapterus.macarellus","Chordata","Actinopterygii","Perciformes","Carangidae","Decapterus","macarellus","",NA
+"70","Diadema.antillarum","Echinodermata","Echinoidea","Diadematoida","Diadematidae","Diadema","antillarum","",NA
+"71","Diodon.holocanthus","Chordata","Actinopterygii","Tetraodontiformes","Diodontidae","Diodon","holocanthus","",NA
+"72","Diodon.hystrix","Chordata","Actinopterygii","Tetraodontiformes","Diodontidae","Diodon","hystrix","",NA
+"73","Echeneis.naucrates","Chordata","Actinopterygii","Perciformes","Echeneidae","Echeneis","naucrates","",NA
+"74","Echinometra.lucunter","Echinodermata","Echinoidea","Camarodonta","Echinometridae","Echinometra","lucunter","",NA
+"75","Echinometra.spp.","Echinodermata","Echinoidea","Camarodonta","Echinometridae","Echinometra","","",NA
+"76","Echinometra.viridis","Echinodermata","Echinoidea","Camarodonta","Echinometridae","Echinometra","viridis","",NA
+"77","Elacatinus.dilepis","Chordata","Actinopterygii","Perciformes","Gobiidae","Elacatinus","dilepis","",NA
+"78","Elacatinus.evelynae","Chordata","Actinopterygii","Perciformes","Gobiidae","Elacatinus","evelynae","",NA
+"79","Elacatinus.horsti","Chordata","Actinopterygii","Perciformes","Gobiidae","Elacatinus","horsti","",NA
+"80","Elacatinus.saucrus","Chordata","Actinopterygii","Perciformes","Gobiidae","Elacatinus","saucrum","",NA
+"81","Epinephelus.adscensionis","Chordata","Actinopterygii","Perciformes","Serranidae","Epinephelus","adscensionis","Groupers",NA
+"82","Epinephelus.guttatus","Chordata","Actinopterygii","Perciformes","Serranidae","Epinephelus","guttatus","Groupers",NA
+"83","Epinephelus.spp.","Chordata","Actinopterygii","Perciformes","Serranidae","Epinephelus","","Groupers",NA
+"84","Epinephelus.striatus","Chordata","Actinopterygii","Perciformes","Serranidae","Epinephelus","striatus","Groupers",NA
+"85","Equetus.lanceolatus","Chordata","Actinopterygii","Perciformes","Sciaenidae","Equetus","lanceolatus","",NA
+"86","Equetus.punctatus","Chordata","Actinopterygii","Perciformes","Sciaenidae","Equetus","punctatus","",NA
+"87","Eucidaris.tribuloides","Echinodermata","Echinoidea","Cidaroida","Cidaridae","Eucidaris","tribuloides","",NA
+"88","Gastropoda.spp.","Mollusca","Gastropoda","","","","","",NA
+"89","Gerres.cinereus","Chordata","Actinopterygii","Perciformes","Gerreidae","Gerres","cinereus","",NA
+"90","Ginglymostoma.cirratum","Chordata","Elasmobranchii","Orectolobiformes","Ginglymostomatidae","Ginglymostoma","cirratum","",NA
+"91","Gnatholepis.thompsoni","Chordata","Actinopterygii","Perciformes","Gobiidae","Gnatholepis","thompsoni","",NA
+"92","Gobiosoma.spp.","Chordata","Actinopterygii","Perciformes","Gobiidae","Gobiosoma","","",NA
+"93","Gramma.loreto","Chordata","Actinopterygii","Perciformes","Grammatidae","Gramma","loreto","",NA
+"94","Grapsus.spp.","Arthropoda","Malacostraca","Decapoda","Grapsidae","Grapsus","","",NA
+"95","Gymnothorax.funebris","Chordata","Actinopterygii","Anguilliformes","Muraenidae","Gymnothorax","funebris","",NA
+"96","Gymnothorax.miliaris","Chordata","Actinopterygii","Anguilliformes","Muraenidae","Gymnothorax","miliaris","",NA
+"97","Gymnothorax.moringa","Chordata","Actinopterygii","Anguilliformes","Muraenidae","Gymnothorax","moringa","",NA
+"98","Gymnothorax.spp.","Chordata","Actinopterygii","Anguilliformes","Muraenidae","Gymnothorax","","",NA
+"99","Haemulon.album","Chordata","Actinopterygii","Perciformes","Haemulidae","Haemulon","album","",NA
+"100","Haemulon.aurolineatum","Chordata","Actinopterygii","Perciformes","Haemulidae","Haemulon","aurolineatum","",NA
+"101","Haemulon.carbonarium","Chordata","Actinopterygii","Perciformes","Haemulidae","Haemulon","carbonarium","",NA
+"102","Haemulon.chrysargyreum","Chordata","Actinopterygii","Perciformes","Haemulidae","Haemulon","chrysargyreum","",NA
+"103","Haemulon.flavolineatum","Chordata","Actinopterygii","Perciformes","Haemulidae","Haemulon","flavolineatum","",NA
+"104","Haemulon.macrostomum","Chordata","Actinopterygii","Perciformes","Haemulidae","Haemulon","macrostomum","",NA
+"105","Haemulon.melanurum","Chordata","Actinopterygii","Perciformes","Haemulidae","Haemulon","melanurum","",NA
+"106","Haemulon.parra","Chordata","Actinopterygii","Perciformes","Haemulidae","Haemulon","parra","",NA
+"107","Haemulon.plumierii","Chordata","Actinopterygii","Perciformes","Haemulidae","Haemulon","plumieri","",NA
+"108","Haemulon.sciurus","Chordata","Actinopterygii","Perciformes","Haemulidae","Haemulon","sciurus","",NA
+"109","Haemulon.spp.","Chordata","Actinopterygii","Perciformes","Haemulidae","Haemulon","","",NA
+"110","Haemulon.squamipinna","Chordata","Actinopterygii","Perciformes","Haemulidae","Haemulon","squamipinna","",NA
+"111","Haemulon.vittatum","Chordata","Actinopterygii","Perciformes","Haemulidae","Haemulon","vittatum","",NA
+"112","Halichoeres.bivittatus","Chordata","Actinopterygii","Perciformes","Labridae","Halichoeres","bivittatus","",NA
+"113","Halichoeres.cyanocephalus","Chordata","Actinopterygii","Perciformes","Labridae","Halichoeres","cyanocephalus","",NA
+"114","Halichoeres.garnoti","Chordata","Actinopterygii","Perciformes","Labridae","Halichoeres","garnoti","",NA
+"115","Halichoeres.maculipinna","Chordata","Actinopterygii","Perciformes","Labridae","Halichoeres","maculipinna","",NA
+"116","Halichoeres.poeyi","Chordata","Actinopterygii","Perciformes","Labridae","Halichoeres","poeyi","",NA
+"117","Halichoeres.radiatus","Chordata","Actinopterygii","Perciformes","Labridae","Halichoeres","radiatus","",NA
+"118","Halichoeres.spp.","Chordata","Actinopterygii","Perciformes","Labridae","Halichoeres","","",NA
+"119","Hemiramphus.brasiliensis","Chordata","Actinopterygii","Beloniformes","Hemiramphidae","Hemiramphus","brasiliensis","",NA
+"120","Hermodice.carunculata","Annelida","Polychaeta","Amphinomida","Amphinomidae","Hermodice","carunculata","",NA
+"121","Heteropriacanthus.cruentatus","Chordata","Actinopterygii","Perciformes","Priacanthidae","Priacanthus","cruentatus","",NA
+"122","Holacanthus.ciliaris","Chordata","Actinopterygii","Perciformes","Pomacanthidae","Holacanthus","ciliaris","",NA
+"123","Holacanthus.tricolor","Chordata","Actinopterygii","Perciformes","Pomacanthidae","Holacanthus","tricolor","",NA
+"124","Holocentrus.adscensionis","Chordata","Actinopterygii","Beryciformes","Holocentridae","Holocentrus","adscensionis","",NA
+"125","Holocentrus.rufus","Chordata","Actinopterygii","Beryciformes","Holocentridae","Holocentrus","rufus","",NA
+"126","Holothuria..Halodeima..mexicana","Echinodermata","Holothuroidea","Holothuriida","Holothuriidae","Holothuria","mexicana","",NA
+"127","Hypleurochilus.bermudensis","Chordata","Actinopterygii","Perciformes","Blenniidae","Hypleurochilus","bermudensis","",NA
+"128","Hypoplectrus.aberrans","Chordata","Actinopterygii","Perciformes","Serranidae","Hypoplectrus","aberrans","",NA
+"129","Hypoplectrus.chlorurus","Chordata","Actinopterygii","Perciformes","Serranidae","Hypoplectrus","chlorurus","",NA
+"130","Hypoplectrus.gummigutta","Chordata","Actinopterygii","Perciformes","Serranidae","Hypoplectrus","gummigutta","",NA
+"131","Hypoplectrus.guttavarius","Chordata","Actinopterygii","Perciformes","Serranidae","Hypoplectrus","guttavarius","",NA
+"132","Hypoplectrus.indigo","Chordata","Actinopterygii","Perciformes","Serranidae","Hypoplectrus","indigo","",NA
+"133","Hypoplectrus.nigricans","Chordata","Actinopterygii","Perciformes","Serranidae","Hypoplectrus","nigricans","",NA
+"134","Hypoplectrus.puella","Chordata","Actinopterygii","Perciformes","Serranidae","Hypoplectrus","puella","",NA
+"135","Hypoplectrus.spp.","Chordata","Actinopterygii","Perciformes","Serranidae","Hypoplectrus","","",NA
+"136","Hypoplectrus.unicolor","Chordata","Actinopterygii","Perciformes","Serranidae","Hypoplectrus","unicolor","",NA
+"137","Isostichopus.badionotus","Echinodermata","Holothuroidea","Synallactida","Stichopodidae","Isostichopus","badionotus","",NA
+"138","Kyphosus.sectatrix","Chordata","Actinopterygii","Perciformes","Kyphosidae","Kyphosus","sectatrix","",NA
+"139","Kyphosus.spp.","Chordata","Actinopterygii","Perciformes","Kyphosidae","Kyphosus","","",NA
+"140","Lachnolaimus.maximus","Chordata","Actinopterygii","Perciformes","Labridae","Lachnolaimus","maximus","",NA
+"141","Lactophrys.bicaudalis","Chordata","Actinopterygii","Tetraodontiformes","Ostraciidae","Lactophrys","bicaudalis","",NA
+"142","Lactophrys.trigonus","Chordata","Actinopterygii","Tetraodontiformes","Ostraciidae","Lactophrys","trigonus","",NA
+"143","Lactophrys.triqueter","Chordata","Actinopterygii","Tetraodontiformes","Ostraciidae","Lactophrys","triqueter","",NA
+"144","Liopropoma.rubre","Chordata","Actinopterygii","Perciformes","Serranidae","Liopropoma","rubre","",NA
+"145","Liopropoma.spp.","Chordata","Actinopterygii","Perciformes","Serranidae","Liopropoma","","",NA
+"146","Lobatus.gigas","Mollusca","Gastropoda","Littorinimorpha","Strombidae","Lobatus","gigas","",NA
+"147","Lutjanus.analis","Chordata","Actinopterygii","Perciformes","Lutjanidae","Lutjanus","analis","Snappers",NA
+"148","Lutjanus.apodus","Chordata","Actinopterygii","Perciformes","Lutjanidae","Lutjanus","apodus","Snappers",NA
+"149","Lutjanus.cyanopterus","Chordata","Actinopterygii","Perciformes","Lutjanidae","Lutjanus","cyanopterus","Snappers",NA
+"150","Lutjanus.griseus","Chordata","Actinopterygii","Perciformes","Lutjanidae","Lutjanus","griseus","Snappers",NA
+"151","Lutjanus.jocu","Chordata","Actinopterygii","Perciformes","Lutjanidae","Lutjanus","jocu","Snappers",NA
+"152","Lutjanus.mahogoni","Chordata","Actinopterygii","Perciformes","Lutjanidae","Lutjanus","mahogoni","Snappers",NA
+"153","Lutjanus.synagris","Chordata","Actinopterygii","Perciformes","Lutjanidae","Lutjanus","synagris","Snappers",NA
+"154","Malacanthus.plumieri","Chordata","Actinopterygii","Perciformes","Malacanthidae","Malacanthus","plumieri","",NA
+"155","Malacoctenus.gilli","Chordata","Actinopterygii","Perciformes","Labrisomidae","Malacoctenus","gilli","",NA
+"156","Malacoctenus.spp.","Chordata","Actinopterygii","Perciformes","Labrisomidae","Malacoctenus","","",NA
+"157","Malacoctenus.triangulatus","Chordata","Actinopterygii","Perciformes","Labrisomidae","Malacoctenus","triangulatus","",NA
+"158","Melichthys.niger","Chordata","Actinopterygii","Tetraodontiformes","Balistidae","Melichthys","niger","",NA
+"159","Microspathodon.chrysurus","Chordata","Actinopterygii","Perciformes","Pomacentridae","Microspathodon","chrysurus","",NA
+"160","Monacanthus.spp.","Chordata","Actinopterygii","Tetraodontiformes","Monacanthidae","Monacanthus","","",NA
+"161","Monacanthus.tuckeri","Chordata","Actinopterygii","Tetraodontiformes","Monacanthidae","Monacanthus","tuckeri","",NA
+"162","Mulloidichthys.martinicus","Chordata","Actinopterygii","Perciformes","Mullidae","Mulloidichthys","martinicus","",NA
+"163","Muraena.robusta","Chordata","Actinopterygii","Anguilliformes","Muraenidae","Muraena","robusta","",NA
+"164","Muraena.spp.","Chordata","Actinopterygii","Anguilliformes","Muraenidae","Muraena","","",NA
+"165","Mycteroperca.interstitialis","Chordata","Actinopterygii","Perciformes","Serranidae","Mycteroperca","interstitialis","Groupers",NA
+"166","Mycteroperca.spp.","Chordata","Actinopterygii","Perciformes","Serranidae","Mycteroperca","","Groupers",NA
+"167","Mycteroperca.tigris","Chordata","Actinopterygii","Perciformes","Serranidae","Mycteroperca","tigris","Groupers",NA
+"168","Mycteroperca.venenosa","Chordata","Actinopterygii","Perciformes","Serranidae","Mycteroperca","venenosa","Groupers",NA
+"169","Myrichthys.breviceps","Chordata","Actinopterygii","Anguilliformes","Ophichthidae","Myrichthys","breviceps","",NA
+"170","Myrichthys.ocellatus","Chordata","Actinopterygii","Anguilliformes","Ophichthidae","Myrichthys","ocellatus","",NA
+"171","Myripristis.jacobus","Chordata","Actinopterygii","Beryciformes","Holocentridae","Myripristis","jacobus","",NA
+"172","Neoniphon.marianus","Chordata","Actinopterygii","Beryciformes","Holocentridae","Neoniphon","marianus","",NA
+"173","Octopus.vulgaris","Mollusca","Cephalopoda","Octopoda","Octopodidae","Octopus","vulgaris","",NA
+"174","Ocyurus.chrysurus","Chordata","Actinopterygii","Perciformes","Lutjanidae","Ocyurus","chrysurus","Snappers",NA
+"175","Odontoscion.dentex","Chordata","Actinopterygii","Perciformes","Sciaenidae","Odontoscion","dentex","",NA
+"176","Ophioblennius.atlanticus","Chordata","Actinopterygii","Perciformes","Blenniidae","Ophioblennius","atlanticus","",NA
+"177","Ophioblennius.macclurei","Chordata","Actinopterygii","Perciformes","Blenniidae","Ophioblennius","macclurei","",NA
+"178","Ophioderma.spp.","Echinodermata","Ophiuroidea","Ophiacanthida","Ophiodermatidae","Ophioderma","","",NA
+"179","Ophiothrix..Acanthophiothrix..suensoni","Echinodermata","Ophiuroidea","Amphilepidida","Ophiotrichidae","Ophiothrix","suensoni","",NA
+"180","Paguristes.spp.","Arthropoda","Malacostraca","Decapoda","Diogenidae","Paguristes","","",NA
+"181","Pagurus.spp.","Arthropoda","Malacostraca","Decapoda","Paguridae","Pagurus","","",NA
+"182","Panulirus.argus","Arthropoda","Malacostraca","Decapoda","Palinuridae","Panulirus","argus","",NA
+"183","Panulirus.guttatus","Arthropoda","Malacostraca","Decapoda","Palinuridae","Panulirus","guttatus","",NA
+"184","Paralabrax.dewegeriÊ","Chordata","Actinopterygii","Perciformes","Serranidae","Paralabrax","dewegeriÊ","",NA
+"185","Paranthias.furcifer","Chordata","Actinopterygii","Perciformes","Serranidae","Paranthias","furcifer","",NA
+"186","Pareques.acuminatus","Chordata","Actinopterygii","Perciformes","Sciaenidae","Equetus","acuminatus","",NA
+"187","Pempheris.schomburgkii","Chordata","Actinopterygii","Perciformes","Pempheridae","Pempheris","schomburgki","",NA
+"188","Pempheris.spp.","Chordata","Actinopterygii","Perciformes","Pempheridae","Pempheris","","",NA
+"189","Percnon.gibbesi","Arthropoda","Malacostraca","Decapoda","Percnidae","Percnon","gibbesi","",NA
+"190","Periclimenes.spp.","Arthropoda","Malacostraca","Decapoda","Palaemonidae","Periclimenes","","",NA
+"191","Pomacanthus.arcuatus","Chordata","Actinopterygii","Perciformes","Pomacanthidae","Pomacanthus","arcuatus","",NA
+"192","Pomacanthus.paru","Chordata","Actinopterygii","Perciformes","Pomacanthidae","Pomacanthus","paru","",NA
+"193","Priacanthus.arenatus","Chordata","Actinopterygii","Perciformes","Priacanthidae","Priacanthus","arenatus","",NA
+"194","Priacanthus.spp.","Chordata","Actinopterygii","Perciformes","Priacanthidae","Priacanthus","","",NA
+"195","Prognathodes.aculeatus","Chordata","Actinopterygii","Perciformes","Chaetodontidae","Prognathodes","aculeatus","",NA
+"196","Prognathodes.aya","Chordata","Actinopterygii","Perciformes","Chaetodontidae","Chaetodon","aya","",NA
+"197","Pseudupeneus.maculatus","Chordata","Actinopterygii","Perciformes","Mullidae","Pseudupeneus","maculatus","",NA
+"198","Pteria.columbus","Mollusca","Bivalvia","Ostreida","Pteriidae","Pteria","colymbus","",NA
+"199","Pterois.volitans","Chordata","Actinopterygii","Scorpaeniformes","Scorpaenidae","Pterois","volitans","",NA
+"200","Rypticus.saponaceus","Chordata","Actinopterygii","Perciformes","Serranidae","Rypticus","saponaceus","",NA
+"201","Sargocentron.coruscum","Chordata","Actinopterygii","Beryciformes","Holocentridae","Sargocentron","coruscum","",NA
+"202","Sargocentron.vexillarium","Chordata","Actinopterygii","Beryciformes","Holocentridae","Sargocentron","vexillarium","",NA
+"203","Scarus.coelestinus","Chordata","Actinopterygii","Perciformes","Scaridae","Scarus","coelestinus","Parrotfishes",NA
+"204","Scarus.coeruleus","Chordata","Actinopterygii","Perciformes","Scaridae","Scarus","coeruleus","Parrotfishes",NA
+"205","Scarus.guacamaia","Chordata","Actinopterygii","Perciformes","Scaridae","Scarus","guacamaia","Parrotfishes",NA
+"206","Scarus.iseri","Chordata","Actinopterygii","Perciformes","Scaridae","Scarus","iseri","Parrotfishes",NA
+"207","Scarus.spp.","Chordata","Actinopterygii","Perciformes","Scaridae","Scarus","","Parrotfishes",NA
+"208","Scarus.taeniopterus","Chordata","Actinopterygii","Perciformes","Scaridae","Scarus","taeniopterus","Parrotfishes",NA
+"209","Scarus.vetula","Chordata","Actinopterygii","Perciformes","Scaridae","Scarus","vetula","Parrotfishes",NA
+"210","Scomberomorus.cavalla","Chordata","Actinopterygii","Perciformes","Scombridae","Scomberomorus","cavalla","",NA
+"211","Scomberomorus.regalis","Chordata","Actinopterygii","Perciformes","Scombridae","Scomberomorus","regalis","",NA
+"212","Scorpaena.plumieri","Chordata","Actinopterygii","Scorpaeniformes","Scorpaenidae","Scorpaena","plumieri","",NA
+"213","Scyllarides.spp.","Arthropoda","Malacostraca","Decapoda","Scyllaridae","Scyllarides","","",NA
+"214","Serranus.baldwini","Chordata","Actinopterygii","Perciformes","Serranidae","Serranus","baldwini","",NA
+"215","Serranus.spp.","Chordata","Actinopterygii","Perciformes","Serranidae","Serranus","","",NA
+"216","Serranus.tabacarius","Chordata","Actinopterygii","Perciformes","Serranidae","Serranus","tabacarius","",NA
+"217","Serranus.tigrinus","Chordata","Actinopterygii","Perciformes","Serranidae","Serranus","tigrinus","",NA
+"218","Sparisoma.atomarium","Chordata","Actinopterygii","Perciformes","Scaridae","Sparisoma","atomarium","Parrotfishes",NA
+"219","Sparisoma.aurofrenatum","Chordata","Actinopterygii","Perciformes","Scaridae","Sparisoma","aurofrenatum","Parrotfishes",NA
+"220","Sparisoma.chrysopterum","Chordata","Actinopterygii","Perciformes","Scaridae","Sparisoma","chrysopterum","Parrotfishes",NA
+"221","Sparisoma.radians","Chordata","Actinopterygii","Perciformes","Scaridae","Sparisoma","radians","Parrotfishes",NA
+"222","Sparisoma.rubripinne","Chordata","Actinopterygii","Perciformes","Scaridae","Sparisoma","rubripinne","Parrotfishes",NA
+"223","Sparisoma.spp.","Chordata","Actinopterygii","Perciformes","Scaridae","Sparisoma","","Parrotfishes",NA
+"224","Sparisoma.viride","Chordata","Actinopterygii","Perciformes","Scaridae","Sparisoma","viride","Parrotfishes",NA
+"225","Sphaeroides.spp.","Chordata","Actinopterygii","Tetraodontiformes","Tetraodontidae","Sphoeroides","","",NA
+"226","Sphoeroides.greeleyi","Chordata","Actinopterygii","Tetraodontiformes","Tetraodontidae","Sphoeroides","greeleyi","",NA
+"227","Sphoeroides.testudineus","Chordata","Actinopterygii","Tetraodontiformes","Tetraodontidae","Sphoeroides","testudineus","",NA
+"228","Sphyraena.barracuda","Chordata","Actinopterygii","Perciformes","Sphyraenidae","Sphyraena","barracuda","",NA
+"229","Stegastes.adustus","Chordata","Actinopterygii","Perciformes","Pomacentridae","Stegastes","adustus","",NA
+"230","Stegastes.fuscus","Chordata","Actinopterygii","Perciformes","Pomacentridae","Stegastes","fuscus","",NA
+"231","Stegastes.leucostictus","Chordata","Actinopterygii","Perciformes","Pomacentridae","Stegastes","leucostictus","",NA
+"232","Stegastes.partitus","Chordata","Actinopterygii","Perciformes","Pomacentridae","Stegastes","partitus","",NA
+"233","Stegastes.planifrons","Chordata","Actinopterygii","Perciformes","Pomacentridae","Stegastes","planifrons","",NA
+"234","Stegastes.variabilis","Chordata","Actinopterygii","Perciformes","Pomacentridae","Stegastes","variabilis","",NA
+"235","Stenopus.hispidus","Arthropoda","Malacostraca","Decapoda","Stenopodidae","Stenopus","hispidus","",NA
+"236","Stenorhynchus.seticornis","Arthropoda","Malacostraca","Decapoda","Inachoididae","Stenorhynchus","seticornis","",NA
+"237","Stephanolepis.hispidus","Chordata","Actinopterygii","Tetraodontiformes","Monacanthidae","Stephanolepis","hispidus","",NA
+"238","Stephanolepis.setifer","Chordata","Actinopterygii","Tetraodontiformes","Monacanthidae","Stephanolepis","setifer","",NA
+"239","Stramonita.rustica","Mollusca","Gastropoda","Neogastropoda","Muricidae","Stramonita","rustica","",NA
+"240","Syngnathus.spp.","Chordata","Actinopterygii","Syngnathiformes","Syngnathidae","Syngnathus","","",NA
+"241","Synodus.intermedius","Chordata","Actinopterygii","Aulopiformes","Synodontidae","Synodus","intermedius","",NA
+"242","Synodus.saurus","Chordata","Actinopterygii","Aulopiformes","Synodontidae","Synodus","saurus","",NA
+"243","Thalassoma.bifasciatum","Chordata","Actinopterygii","Perciformes","Labridae","Thalassoma","bifasciatum","",NA
+"244","Tripneustes.ventricosus","Echinodermata","Echinoidea","Camarodonta","Toxopneustidae","Tripneustes","ventricosus","",NA
+"245","Unidentified.spp...fish.","Chordata","Actinopterygii","","","","","",NA
+"246","Urobatis.jamaicensis","Chordata","Elasmobranchii","Myliobatiformes","Urolophidae","Urolophus","jamaicensis","",NA
+"247","Xanthichthys.ringens","Chordata","Actinopterygii","Tetraodontiformes","Balistidae","Xanthichthys","ringens","",NA
+"248","Lebrunia.neglecta","Cnidaria","Anthozoa","Actiniaria","Aliciidae","Lebrunia","neglecta",NA,"Anemone spp."
+"249","Phymanthus.crucifer","Cnidaria","Anthozoa","Actiniaria","Phymanthidae","Phymanthus","crucifer",NA,"Anemone spp."
+"250","Ricordea.florida","Cnidaria","Anthozoa","Corallimorpharia","Ricordeidae","Ricordea","florida",NA,"Anemone spp."
+"251","Anemone.spp.","Cnidaria","Anthozoa","Actiniaria","Actiniidae","Anemone","",NA,"Anemone spp."
+"252","Anemones..total.","Cnidaria","Anthozoa","","","","",NA,"Benthic Category"
+"253","Eudistoma.spp.","Chordata","Ascidiacea","Aplousobranchia","Polycitoridae","Eudistoma","",NA,"Ascidian spp."
+"254","Trididemnum.solidum","Chordata","Ascidiacea","Aplousobranchia","Didemnidae","Trididemnum","solidum",NA,"Ascidian spp."
+"255","Ascidian.spp.","Chordata","Ascidiacea","","","","",NA,"Ascidian spp."
+"256","Tunicata..total.","Chordata","Ascidiacea","","","","",NA,"Benthic Category"
+"257","CCA..total.","Rhodophyta","","","","","",NA,"Benthic Category"
+"258","Cyanobacteria..total.","Cyanobacteria","","","","","",NA,"Benthic Category"
+"259","Thalassia.testudinum","Tracheophyta","Magnoliopsida","Alismatales","Hydrocharitaceae","Thalassia","testudinum",NA,"Seagrass spp."
+"260","Seagrass..total.","","","","","","",NA,"Benthic Category"
+"261","Amphiroa.spp.","Rhodophyta","Florideophyceae","Corallinales","Lithophyllaceae","Amphiroa","",NA,"Macroalgae spp."
+"262","Asparagopsis.taxiformis","Rhodophyta","Florideophyceae","Bonnemaisoniales","Bonnemaisoniaceae","Asparagopsis","taxiformis",NA,"Macroalgae spp."
+"263","Asparagopsis.taxiformis.on.Ramicrusta","Rhodophyta","Florideophyceae","Bonnemaisoniales","Bonnemaisoniaceae","Asparagopsis","taxiformis",NA,"Macroalgae spp."
+"264","Caulerpa.racemosa","Chlorophyta","Ulvophyceae","Bryopsidales","Caulerpaceae","Caulerpa","racemosa",NA,"Macroalgae spp."
+"265","Caulerpa.spp.","Chlorophyta","Ulvophyceae","Bryopsidales","Caulerpaceae","Caulerpa","",NA,"Macroalgae spp."
+"266","Caulerpa.spp...on.Ramicrusta","Chlorophyta","Ulvophyceae","Bryopsidales","Caulerpaceae","Caulerpa","",NA,"Macroalgae spp."
+"267","Dichotomaria.marginata","Rhodophyta","Florideophyceae","Nemaliales","Galaxauraceae","Dichotomaria","marginata",NA,"Macroalgae spp."
+"268","Dictyota.spp.","Ochrophyta","Phaeophyceae","Dictyotales","Dictyotaceae","Dictyota","",NA,"Macroalgae spp."
+"269","Dictyota.spp...on.Ramicrusta","Ochrophyta","Phaeophyceae","Dictyotales","Dictyotaceae","Dictyota","",NA,"Macroalgae spp."
+"270","Galaxaura.spp.","Rhodophyta","Florideophyceae","Nemaliales","Galaxauraceae","Galaxaura","",NA,"Macroalgae spp."
+"271","Galaxaura.spp...on.Ramicrusta","Rhodophyta","Florideophyceae","Nemaliales","Galaxauraceae","Galaxaura","",NA,"Macroalgae spp."
+"272","Gracilaria.spp.","Rhodophyta","Florideophyceae","Gracilariales","Gracilariaceae","Gracilaria","",NA,"Macroalgae spp."
+"273","Halimeda.discoidea","Chlorophyta","Ulvophyceae","Bryopsidales","Halimedaceae","Halimeda","discoidea",NA,"Macroalgae spp."
+"274","Halimeda.spp.","Chlorophyta","Ulvophyceae","Bryopsidales","Halimedaceae","Halimeda","",NA,"Macroalgae spp."
+"275","Halimeda.spp...on.Ramicrusta","Chlorophyta","Ulvophyceae","Bryopsidales","Halimedaceae","Halimeda","",NA,"Macroalgae spp."
+"276","Halimeda.tuna","Chlorophyta","Ulvophyceae","Bryopsidales","Halimedaceae","Halimeda","tuna",NA,"Macroalgae spp."
+"277","Jania.spp.","Rhodophyta","Florideophyceae","Corallinales","Corallinaceae","Jania","",NA,"Macroalgae spp."
+"278","Lobophora.spp.","Ochrophyta","Phaeophyceae","Dictyotales","Dictyotaceae","Lobophora","",NA,"Macroalgae spp."
+"279","Lobophora.variegata","Ochrophyta","Phaeophyceae","Dictyotales","Dictyotaceae","Lobophora","variegata",NA,"Macroalgae spp."
+"280","Lobophora.variegatus.on.Ramicrusta","Ochrophyta","Phaeophyceae","Dictyotales","Dictyotaceae","Lobophora","variegata",NA,"Macroalgae spp."
+"281","Martensia.pavonia","Rhodophyta","Florideophyceae","Ceramiales","Delesseriaceae","Martensia","pavonia",NA,"Macroalgae spp."
+"282","Padina.spp.","Ochrophyta","Phaeophyceae","Dictyotales","Dictyotaceae","Padina","",NA,"Macroalgae spp."
+"283","Sargassum.hystrix","Ochrophyta","Phaeophyceae","Fucales","Sargassaceae","Sargassum","hystrix",NA,"Macroalgae spp."
+"284","Sargassum.natans","Ochrophyta","Phaeophyceae","Fucales","Sargassaceae","Sargassum","natans",NA,"Macroalgae spp."
+"285","Stypopodium.spp.","Ochrophyta","Phaeophyceae","Dictyotales","Dictyotaceae","Stypopodium","",NA,"Macroalgae spp."
+"286","Stypopodium.zonale","Ochrophyta","Phaeophyceae","Dictyotales","Dictyotaceae","Stypopodium","zonale",NA,"Macroalgae spp."
+"287","Udotea.spp.","Chlorophyta","Ulvophyceae","Bryopsidales","Udoteaceae","Udotea","",NA,"Macroalgae spp."
+"288","Valonia.ventricosa","Chlorophyta","Ulvophyceae","Cladophorales","Valoniaceae","Valonia","ventricosa",NA,"Macroalgae spp."
+"289","Wrangelia.bicuspidata","Rhodophyta","Florideophyceae","Ceramiales","Wrangeliaceae","Wrangelia","bicuspidata",NA,"Macroalgae spp."
+"290","Macroalgae.spp.","Plantae Kingdom","","","","","",NA,"Macroalgae spp."
+"291","Macroalgae..total.","Plantae Kingdom","","","","","",NA,"Benthic Category"
+"292","Ramicrusta.spp.","Rhodophyta","Florideophyceae","Peyssonneliales","Peyssonneliaceae","Ramicrusta","",NA,"Peyssonneliaceae spp."
+"293","Peyssonnelia.spp.","Rhodophyta","Florideophyceae","Peyssonneliales","Peyssonneliaceae","Peyssonnelia","",NA,"Peyssonneliaceae spp."
+"294","Peyssonneliaceae..total.","Rhodophyta","Florideophyceae","Peyssonneliales","Peyssonneliaceae","","",NA,"Benthic Category"
+"295","Turf..mixed..on.Ramicrusta","Plantae Kingdom","","","","","",NA,"Turf algae spp."
+"296","Turf..mixed..with.sediment","Plantae Kingdom","","","","","",NA,"Turf algae spp."
+"297","Turf..mixed.","Plantae Kingdom","","","","","",NA,"Turf algae spp."
+"298","Turf.Algae..total.","Plantae Kingdom","","","","","",NA,"Benthic Category"
+"299","Antillogorgia.acerosa","Cnidaria","Anthozoa","Alcyonacea","Gorgoniidae","Antillogorgia","acerosa",NA,"Octocoral spp."
+"300","Antillogorgia.americana","Cnidaria","Anthozoa","Alcyonacea","Gorgoniidae","Antillogorgia","americana",NA,"Octocoral spp."
+"301","Antillogorgia.bipinnata","Cnidaria","Anthozoa","Alcyonacea","Gorgoniidae","Antillogorgia","bipinnata",NA,"Octocoral spp."
+"302","Antillogorgia.rigida","Cnidaria","Anthozoa","Alcyonacea","Gorgoniidae","Antillogorgia","rigida",NA,"Octocoral spp."
+"303","Eunicea.calyculata","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Eunicea","calyculata",NA,"Octocoral spp."
+"304","Eunicea.flexuosa","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Eunicea","flexuosa",NA,"Octocoral spp."
+"305","Eunicea.mammosa","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Eunicea","mammosa",NA,"Octocoral spp."
+"306","Eunicea.pallida","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Eunicea","pallida",NA,"Octocoral spp."
+"307","Eunicea.spp.","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Eunicea","",NA,"Octocoral spp."
+"308","Eunicea.succinea","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Eunicea","succinea",NA,"Octocoral spp."
+"309","Eunicea.tourneforti","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Eunicea","tourneforti",NA,"Octocoral spp."
+"310","Gorgonia.mariae","Cnidaria","Anthozoa","Alcyonacea","Gorgoniidae","Gorgonia","mariae",NA,"Octocoral spp."
+"311","Gorgonia.ventalina","Cnidaria","Anthozoa","Alcyonacea","Gorgoniidae","Gorgonia","ventalina",NA,"Octocoral spp."
+"312","Muricea.atlantica","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Muricea","atlantica",NA,"Octocoral spp."
+"313","Muricea.elongata","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Muricea","elongata",NA,"Octocoral spp."
+"314","Muricea.muricata","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Muricea","muricata",NA,"Octocoral spp."
+"315","Muricea.pinnata","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Muricea","pinnata",NA,"Octocoral spp."
+"316","Muriceopsis.flavida","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Muriceopsis","flavida",NA,"Octocoral spp."
+"317","Plexaura.homomalla","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Plexaura","homomalla",NA,"Octocoral spp."
+"318","Plexaura.kukenthali","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Plexaura","kukenthali",NA,"Octocoral spp."
+"319","Plexaura.spp.","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Plexaura","",NA,"Octocoral spp."
+"320","Plexaurella.nutans","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Plexaurella","nutans",NA,"Octocoral spp."
+"321","Pseudoplexaura.flagellosa","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Pseudoplexaura","flagellosa",NA,"Octocoral spp."
+"322","Pseudoplexaura.spp.","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Pseudoplexaura","",NA,"Octocoral spp."
+"323","Pseudoplexaura.wagenaari","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Pseudoplexaura","wagenaari",NA,"Octocoral spp."
+"324","Pterogorgia.guadalupensis","Cnidaria","Anthozoa","Alcyonacea","Gorgoniidae","Pterogorgia","guadalupensis",NA,"Octocoral spp."
+"325","Pterogorgia.spp.","Cnidaria","Anthozoa","Alcyonacea","Gorgoniidae","Pterogorgia","",NA,"Octocoral spp."
+"326","Octocoral.spp.","Cnidaria","Anthozoa","Alcyonacea","","","",NA,"Octocoral spp."
+"327","Octocorals..total.erect.","Cnidaria","Anthozoa","Alcyonacea","","","",NA,"Benthic Category"
+"328","Briareum.asbestinum","Cnidaria","Anthozoa","Alcyonacea","Briareidae","Briareum","asbestinum",NA,"Octocoral spp."
+"329","Erythropodium.caribaeorum","Cnidaria","Anthozoa","Alcyonacea","Anthothelidae","Erythropodium","caribaeorum",NA,"Octocoral spp."
+"330","Octocoral.spp...encrusting.","Cnidaria","Anthozoa","Alcyonacea","Anthothelidae","","",NA,"Octocoral spp."
+"331","Octocorals..total.encrusting.","Cnidaria","Anthozoa","Alcyonacea","Anthothelidae","","",NA,"Benthic Category"
+"332","Antillogorgia.acerosa....col..","Cnidaria","Anthozoa","Alcyonacea","Gorgoniidae","Antillogorgia","acerosa",NA,"Octocoral spp. (#col.)"
+"333","Antillogorgia.americana....col..","Cnidaria","Anthozoa","Alcyonacea","Gorgoniidae","Antillogorgia","americana",NA,"Octocoral spp. (#col.)"
+"334","Antillogorgia.bipinnata....col..","Cnidaria","Anthozoa","Alcyonacea","Gorgoniidae","Antillogorgia","bipinnata",NA,"Octocoral spp. (#col.)"
+"335","Antillogorgia.spp......col..","Cnidaria","Anthozoa","Alcyonacea","Gorgoniidae","Antillogorgia","",NA,"Octocoral spp. (#col.)"
+"336","Briareum.asbestinum....col..","Cnidaria","Anthozoa","Alcyonacea","Briareidae","Briareum","asbestinum",NA,"Octocoral spp. (#col.)"
+"337","Erythropodium.caribaeorum....col..","Cnidaria","Anthozoa","Alcyonacea","Anthothelidae","Erythropodium","caribaeorum",NA,"Octocoral spp. (#col.)"
+"338","Eunicea.asperula....col..","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Eunicea","asperula",NA,"Octocoral spp. (#col.)"
+"339","Eunicea.calyculata....col..","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Eunicea","calyculata",NA,"Octocoral spp. (#col.)"
+"340","Eunicea.flexuosa....col..","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Eunicea","flexuosa",NA,"Octocoral spp. (#col.)"
+"341","Eunicea.lacinata....col..","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Eunicea","lacinata",NA,"Octocoral spp. (#col.)"
+"342","Eunicea.laxispica....col..","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Eunicea","laxispica",NA,"Octocoral spp. (#col.)"
+"343","Eunicea.mammosa....col..","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Eunicea","mammosa",NA,"Octocoral spp. (#col.)"
+"344","Eunicea.spp......col..","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Eunicea","",NA,"Octocoral spp. (#col.)"
+"345","Eunicea.succinea....col..","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Eunicea","succinea",NA,"Octocoral spp. (#col.)"
+"346","Eunicea.tourneforti....col..","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Eunicea","tourneforti",NA,"Octocoral spp. (#col.)"
+"347","Gorgonia.ventalina....col..","Cnidaria","Anthozoa","Alcyonacea","Gorgoniidae","Gorgonia","ventalina",NA,"Octocoral spp. (#col.)"
+"348","Muricea.atlantica....col..","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Muricea","atlantica",NA,"Octocoral spp. (#col.)"
+"349","Muricea.elongata....col..","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Muricea","elongata",NA,"Octocoral spp. (#col.)"
+"350","Muricea.laxa....col..","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Muricea","laxa",NA,"Octocoral spp. (#col.)"
+"351","Muricea.muricata....col..","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Muricea","muricata",NA,"Octocoral spp. (#col.)"
+"352","Muricea.spp......col..","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Muricea","",NA,"Octocoral spp. (#col.)"
+"353","Muriceopsis.flavida....col..","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Muriceopsis","flavida",NA,"Octocoral spp. (#col.)"
+"354","Plexaura.homomalla....col..","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Plexaura","homomalla",NA,"Octocoral spp. (#col.)"
+"355","Plexaura.kukenthali....col..","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Plexaura","kukenthali",NA,"Octocoral spp. (#col.)"
+"356","Plexaura.kuna....col..","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Plexaura","kuna",NA,"Octocoral spp. (#col.)"
+"357","Plexaura.spp......col..","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Plexaura","",NA,"Octocoral spp. (#col.)"
+"358","Plexaurella.dichotoma....col..","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Plexaurella","dichotoma",NA,"Octocoral spp. (#col.)"
+"359","Plexaurella.nutans....col..","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Plexaurella","nutans",NA,"Octocoral spp. (#col.)"
+"360","Plexaurella.spp......col..","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Plexaurella","",NA,"Octocoral spp. (#col.)"
+"361","Pseudoplexaura.flagellosa....col..","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Pseudoplexaura","flagellosa",NA,"Octocoral spp. (#col.)"
+"362","Pseudoplexaura.porosa....col..","Cnidaria","Anthozoa","Alcyonacea","Plexauridae","Pseudoplexaura","porosa",NA,"Octocoral spp. (#col.)"
+"363","Pterogorgia.citrina....col..","Cnidaria","Anthozoa","Alcyonacea","Gorgoniidae","Pterogorgia","citrina",NA,"Octocoral spp. (#col.)"
+"364","Pterogorgia.guadalupensis....col..","Cnidaria","Anthozoa","Alcyonacea","Gorgoniidae","Pterogorgia","guadalupensis",NA,"Octocoral spp. (#col.)"
+"365","Pterogorgia.spp......col..","Cnidaria","Anthozoa","Alcyonacea","Gorgoniidae","Pterogorgia","",NA,"Octocoral spp. (#col.)"
+"366","Octocoral..total...col..","Cnidaria","Anthozoa","Alcyonacea","","","",NA,"Octocoral (#col.)"
+"367","Agelas.citrina","Porifera","Demospongiae","Agelasida","Agelasidae","Agelas","citrina",NA,"Sponge spp."
+"368","Agelas.clathrodes","Porifera","Demospongiae","Agelasida","Agelasidae","Agelas","clathrodes",NA,"Sponge spp."
+"369","Agelas.conifera","Porifera","Demospongiae","Agelasida","Agelasidae","Agelas","conifera",NA,"Sponge spp."
+"370","Agelas.dispar","Porifera","Demospongiae","Agelasida","Agelasidae","Agelas","dispar",NA,"Sponge spp."
+"371","Agelas.sceptrum","Porifera","Demospongiae","Agelasida","Agelasidae","Agelas","sceptrum",NA,"Sponge spp."
+"372","Agelas.spp.","Porifera","Demospongiae","Agelasida","Agelasidae","Agelas","",NA,"Sponge spp."
+"373","Agelas.sventres","Porifera","Demospongiae","Agelasida","Agelasidae","Agelas","sventres",NA,"Sponge spp."
+"374","Agelas.tubulata","Porifera","Demospongiae","Agelasida","Agelasidae","Agelas","tubulata",NA,"Sponge spp."
+"375","Aiolochroia.crassa","Porifera","Demospongiae","Verongiida","Aplysinidae","Aiolochroia","crassa",NA,"Sponge spp."
+"376","Amphimedon.compressa","Porifera","Demospongiae","Haplosclerida","Niphatidae","Amphimedon","compressa",NA,"Sponge spp."
+"377","Amphimedon.viridis","Porifera","Demospongiae","Haplosclerida","Niphatidae","Amphimedon","viridis",NA,"Sponge spp."
+"378","Aplysina.archeri","Porifera","Demospongiae","Verongiida","Aplysinidae","Aplysina","archeri",NA,"Sponge spp."
+"379","Aplysina.cauliformis","Porifera","Demospongiae","Verongiida","Aplysinidae","Aplysina","cauliformis",NA,"Sponge spp."
+"380","Aplysina.fistularis","Porifera","Demospongiae","Verongiida","Aplysinidae","Aplysina","fistularis",NA,"Sponge spp."
+"381","Aplysina.fulva","Porifera","Demospongiae","Verongiida","Aplysinidae","Aplysina","fulva",NA,"Sponge spp."
+"382","Aplysina.lacunosa","Porifera","Demospongiae","Verongiida","Aplysinidae","Aplysina","lacunosa",NA,"Sponge spp."
+"383","Aplysina.spp.","Porifera","Demospongiae","Verongiida","Aplysinidae","Aplysina","",NA,"Sponge spp."
+"384","Biemna.caribea","Porifera","Demospongiae","Biemnida","Biemnidae","Biemna","caribea",NA,"Sponge spp."
+"385","Biemna.spp.","Porifera","Demospongiae","Biemnida","Biemnidae","Biemna","",NA,"Sponge spp."
+"386","Callyspongia.armigera","Porifera","Demospongiae","Haplosclerida","Callyspongiidae","Callyspongia","armigera",NA,"Sponge spp."
+"387","Callyspongia.fallax","Porifera","Demospongiae","Haplosclerida","Callyspongiidae","Callyspongia","fallax",NA,"Sponge spp."
+"388","Callyspongia.plicifera","Porifera","Demospongiae","Haplosclerida","Callyspongiidae","Callyspongia","plicifera",NA,"Sponge spp."
+"389","Callyspongia.spp.","Porifera","Demospongiae","Haplosclerida","Callyspongiidae","Callyspongia","",NA,"Sponge spp."
+"390","Callyspongia.tenerrima","Porifera","Demospongiae","Haplosclerida","Callyspongiidae","Callyspongia","tenerrima",NA,"Sponge spp."
+"391","Callyspongia.vaginalis","Porifera","Demospongiae","Haplosclerida","Callyspongiidae","Callyspongia","vaginalis",NA,"Sponge spp."
+"392","Chondrilla.caribensis","Porifera","Demospongiae","Chondrillida","Chondrillidae","Chondrilla","caribensis",NA,"Sponge spp."
+"393","Chondrosia.collectrix","Porifera","Demospongiae","Chondrosiida","Chondrosiidae","Chondrosia","collectrix",NA,"Sponge spp."
+"394","Cinachyrella.apion","Porifera","Demospongiae","Tetractinellida","Tetillidae","Cinachyrella","apion",NA,"Sponge spp."
+"395","Cinachyrella.kuekenthali","Porifera","Demospongiae","Tetractinellida","Tetillidae","Cinachyrella","kuekenthali",NA,"Sponge spp."
+"396","Clathria.spp.","Porifera","Demospongiae","Poecilosclerida","Microcionidae","Clathria","",NA,"Sponge spp."
+"397","Clathria.venosa","Porifera","Demospongiae","Poecilosclerida","Microcionidae","Clathria","venosa",NA,"Sponge spp."
+"398","Cliona.aprica","Porifera","Demospongiae","Clionaida","Clionaidae","Cliona","aprica",NA,"Sponge spp."
+"399","Cliona.caribbaea","Porifera","Demospongiae","Clionaida","Clionaidae","Cliona","caribbaea",NA,"Sponge spp."
+"400","Cliona.delitrix","Porifera","Demospongiae","Clionaida","Clionaidae","Cliona","delitrix",NA,"Sponge spp."
+"401","Cliona.laticavicola","Porifera","Demospongiae","Clionaida","Clionaidae","Cliona","laticavicola",NA,"Sponge spp."
+"402","Cliona.spp.","Porifera","Demospongiae","Clionaida","Clionaidae","Cliona","",NA,"Sponge spp."
+"403","Cliona.tenuis","Porifera","Demospongiae","Clionaida","Clionaidae","Cliona","tenuis",NA,"Sponge spp."
+"404","Cliona.varians","Porifera","Demospongiae","Clionaida","Clionaidae","Cliona","varians",NA,"Sponge spp."
+"405","Cribrochalina.vasculum","Porifera","Demospongiae","Haplosclerida","Niphatidae","Cribrochalina","vasculum",NA,"Sponge spp."
+"406","Desmapsamma.spp.","Porifera","Demospongiae","Poecilosclerida","Desmacididae","Desmapsamma","",NA,"Sponge spp."
+"407","Desmapsamma.anchorata","Porifera","Demospongiae","Poecilosclerida","Desmacididae","Desmapsamma","anchorata",NA,"Sponge spp."
+"408","Dictyonella.funicularis","Porifera","Demospongiae","Bubarida","Dictyonellidae","Dictyonella","funicularis",NA,"Sponge spp."
+"409","Dictyonella.spp.","Porifera","Demospongiae","Bubarida","Dictyonellidae","Dictyonella","",NA,"Sponge spp."
+"410","Diplastrella.spp.","Porifera","Demospongiae","Clionaida","Spirastrellidae","Diplastrella","",NA,"Sponge spp."
+"411","Dragmacidon.reticulatum","Porifera","Demospongiae","Axinellida","Axinellidae","Dragmacidon","reticulatum",NA,"Sponge spp."
+"412","Dysidea.etheria","Porifera","Demospongiae","Dictyoceratida","Dysideidae","Dysidea","etheria",NA,"Sponge spp."
+"413","Dysidea.janiae","Porifera","Demospongiae","Dictyoceratida","Dysideidae","Dysidea","janiae",NA,"Sponge spp."
+"414","Ectyoplasia.ferox","Porifera","Demospongiae","Axinellida","Raspailiidae","Ectyoplasia","ferox",NA,"Sponge spp."
+"415","Geodia.neptuni","Porifera","Demospongiae","Tetractinellida","Geodiidae","Geodia","neptuni",NA,"Sponge spp."
+"416","Haliclona.spp.","Porifera","Demospongiae","Haplosclerida","Chalinidae","Haliclona","",NA,"Sponge spp."
+"417","Halisarca.caerulea","Porifera","Demospongiae","Chondrillida","Halisarcidae","Halisarca","caerulea",NA,"Sponge spp."
+"418","Halisarca.spp.","Porifera","Demospongiae","Chondrillida","Halisarcidae","Halisarca","",NA,"Sponge spp."
+"419","Iotrochota.arenosa","Porifera","Demospongiae","Poecilosclerida","Iotrochotidae","Iotrochota","arenosa",NA,"Sponge spp."
+"420","Iotrochota.birotulata","Porifera","Demospongiae","Poecilosclerida","Iotrochotidae","Iotrochota","birotulata",NA,"Sponge spp."
+"421","Ircinia.campana","Porifera","Demospongiae","Dictyoceratida","Irciniidae","Ircinia","campana",NA,"Sponge spp."
+"422","Ircinia.felix","Porifera","Demospongiae","Dictyoceratida","Irciniidae","Ircinia","felix",NA,"Sponge spp."
+"423","Ircinia.spp.","Porifera","Demospongiae","Dictyoceratida","Irciniidae","Ircinia","",NA,"Sponge spp."
+"424","Ircinia.strobilina","Porifera","Demospongiae","Dictyoceratida","Irciniidae","Ircinia","strobilina",NA,"Sponge spp."
+"425","Monanchora.arbuscula","Porifera","Demospongiae","Poecilosclerida","Crambeidae","Monanchora","arbuscula",NA,"Sponge spp."
+"426","Mycale.laevis","Porifera","Demospongiae","Poecilosclerida","Mycalidae","Mycale","laevis",NA,"Sponge spp."
+"427","Mycale.laxissima","Porifera","Demospongiae","Poecilosclerida","Mycalidae","Mycale","laxissima",NA,"Sponge spp."
+"428","Neofibularia.nolitangere","Porifera","Demospongiae","Biemnida","Biemnidae","Neofibularia","nolitangere",NA,"Sponge spp."
+"429","Neopetrosia.carbonaria","Porifera","Demospongiae","Haplosclerida","Petrosiidae","Neopetrosia","carbonaria",NA,"Sponge spp."
+"430","Neopetrosia.proxima","Porifera","Demospongiae","Haplosclerida","Petrosiidae","Neopetrosia","proxima",NA,"Sponge spp."
+"431","Neopetrosia.rosariensis","Porifera","Demospongiae","Haplosclerida","Petrosiidae","Neopetrosia","rosariensis",NA,"Sponge spp."
+"432","Neopetrosia.spp.","Porifera","Demospongiae","Haplosclerida","Petrosiidae","Neopetrosia","",NA,"Sponge spp."
+"433","Niphates.alba","Porifera","Demospongiae","Haplosclerida","Niphatidae","Niphates","alba",NA,"Sponge spp."
+"434","Niphates.caribica","Porifera","Demospongiae","Haplosclerida","Niphatidae","Niphates","caribica",NA,"Sponge spp."
+"435","Niphates.caycedoi","Porifera","Demospongiae","Haplosclerida","Niphatidae","Niphates","caycedoi",NA,"Sponge spp."
+"436","Niphates.digitalis","Porifera","Demospongiae","Haplosclerida","Niphatidae","Niphates","digitalis",NA,"Sponge spp."
+"437","Niphates.erecta","Porifera","Demospongiae","Haplosclerida","Niphatidae","Niphates","erecta",NA,"Sponge spp."
+"438","Niphates.spp.","Porifera","Demospongiae","Haplosclerida","Niphatidae","Niphates","",NA,"Sponge spp."
+"439","Petrosia.pellasarca","Porifera","Demospongiae","Haplosclerida","Petrosiidae","Petrosia","pellasarca",NA,"Sponge spp."
+"440","Petrosia.spp.","Porifera","Demospongiae","Haplosclerida","Petrosiidae","Petrosia","",NA,"Sponge spp."
+"441","Petrosia.weinbergi","Porifera","Demospongiae","Haplosclerida","Petrosiidae","Petrosia","weinbergi",NA,"Sponge spp."
+"442","Phorbas.amaranthus","Porifera","Demospongiae","Poecilosclerida","Hymedesmiidae","Phorbas","amaranthus",NA,"Sponge spp."
+"443","Placospherastra.micraster","Porifera","Demospongiae","Hadromerida","Placospongiidae","Placospherastra","micraster",NA,"Sponge spp."
+"444","Plakortis.angulospiculatus","Porifera","Homoscleromorpha","Homosclerophorida","Plakinidae","Plakortis","angulospiculatus",NA,"Sponge spp."
+"445","Plakortis.halichondrioides","Porifera","Homoscleromorpha","Homosclerophorida","Plakinidae","Plakortis","halichondrioides",NA,"Sponge spp."
+"446","Plakortis.spp.","Porifera","Homoscleromorpha","Homosclerophorida","Plakinidae","Plakortis","",NA,"Sponge spp."
+"447","Prosuberites.laughlini","Porifera","Demospongiae","Agelasida","Hymerhabdiidae","Prosuberites","laughlini",NA,"Sponge spp."
+"448","Ptilocaulis.walpersii","Porifera","Demospongiae","Axinellida","Axinellidae","Ptilocaulis","walpersii",NA,"Sponge spp."
+"449","Scopalina.ruetzleri","Porifera","Demospongiae","Scopalinida","Scopalinidae","Scopalina","ruetzleri",NA,"Sponge spp."
+"450","Smenospongia.aurea","Porifera","Demospongiae","Dictyoceratida","Thorectidae","Smenospongia","aurea",NA,"Sponge spp."
+"451","Smenospongia.conulosa","Porifera","Demospongiae","Dictyoceratida","Thorectidae","Smenospongia","conulosa",NA,"Sponge spp."
+"452","Spheciospongia.vesparium","Porifera","Demospongiae","Clionaida","Clionaidae","Spheciospongia","vesparium",NA,"Sponge spp."
+"453","Spirastrella.coccinea","Porifera","Demospongiae","Clionaida","Spirastrellidae","Spirastrella","coccinea",NA,"Sponge spp."
+"454","Spirastrella.hartmani","Porifera","Demospongiae","Clionaida","Spirastrellidae","Spirastrella","hartmani",NA,"Sponge spp."
+"455","Suberea.spp.","Porifera","Demospongiae","Verongiida","Aplysinellidae","Suberea","",NA,"Sponge spp."
+"456","Svenzea.zeai","Porifera","Demospongiae","Scopalinida","Scopalinidae","Svenzea","zeai",NA,"Sponge spp."
+"457","Tedania.klausi","Porifera","Demospongiae","Poecilosclerida","Tedaniidae","Tedania","klausi",NA,"Sponge spp."
+"458","Topsentia.ophiraphidites","Porifera","Demospongiae","Suberitida","Halichondriidae","Topsentia","ophiraphidites",NA,"Sponge spp."
+"459","Topsentia.spp.","Porifera","Demospongiae","Suberitida","Halichondriidae","Topsentia","",NA,"Sponge spp."
+"460","Verongula.reiswigi","Porifera","Demospongiae","Verongiida","Aplysinidae","Verongula","reiswigi",NA,"Sponge spp."
+"461","Verongula.rigida","Porifera","Demospongiae","Verongiida","Aplysinidae","Verongula","rigida",NA,"Sponge spp."
+"462","Verongula.spp.","Porifera","Demospongiae","Verongiida","Aplysinidae","Verongula","",NA,"Sponge spp."
+"463","Xestospongia.muta","Porifera","Demospongiae","Haplosclerida","Petrosiidae","Xestospongia","muta",NA,"Sponge spp."
+"464","Sponge.spp.","Porifera","","","","","",NA,"Sponge spp."
+"465","Sponges..total.","Porifera","","","","","",NA,"Benthic Category"
+"466","Acropora.cervicornis","Cnidaria","Anthozoa","Scleractinia","Acroporidae","Acropora","cervicornis",NA,"Stony Coral spp."
+"467","Acropora.palmata","Cnidaria","Anthozoa","Scleractinia","Acroporidae","Acropora","palmata",NA,"Stony Coral spp."
+"468","Acropora.prolifera","Cnidaria","Anthozoa","Scleractinia","Acroporidae","Acropora","prolifera",NA,"Stony Coral spp."
+"469","Agaricia.agaricites","Cnidaria","Anthozoa","Scleractinia","Agariciidae","Agaricia","agaricites",NA,"Stony Coral spp."
+"470","Agaricia.grahamae","Cnidaria","Anthozoa","Scleractinia","Agariciidae","Agaricia","grahamae",NA,"Stony Coral spp."
+"471","Agaricia.humilis","Cnidaria","Anthozoa","Scleractinia","Agariciidae","Agaricia","humilis",NA,"Stony Coral spp."
+"472","Agaricia.lamarcki","Cnidaria","Anthozoa","Scleractinia","Agariciidae","Agaricia","lamarcki",NA,"Stony Coral spp."
+"473","Agaricia.spp.","Cnidaria","Anthozoa","Scleractinia","Agariciidae","Agaricia","",NA,"Stony Coral spp."
+"474","Colpophyllia.natans","Cnidaria","Anthozoa","Scleractinia","Faviidae","Colpophyllia","natans",NA,"Stony Coral spp."
+"475","Dendrogyra.cylindrus","Cnidaria","Anthozoa","Scleractinia","Meandrinidae","Dendrogyra","cylindrus",NA,"Stony Coral spp."
+"476","Dichocoenia.stokesii","Cnidaria","Anthozoa","Scleractinia","Meandrinidae","Dichocoenia","stokesii",NA,"Stony Coral spp."
+"477","Diploria.labyrinthiformis","Cnidaria","Anthozoa","Scleractinia","Faviidae","Diploria","labyrinthiformis",NA,"Stony Coral spp."
+"478","Eusmilia.fastigiata","Cnidaria","Anthozoa","Scleractinia","Meandrinidae","Eusmilia","fastigiata",NA,"Stony Coral spp."
+"479","Helioseris.cucullata","Cnidaria","Anthozoa","Scleractinia","Agariciidae","Helioseris","cucullata",NA,"Stony Coral spp."
+"480","Isophyllia.rigida","Cnidaria","Anthozoa","Scleractinia","Faviidae","Isophyllia","rigida",NA,"Stony Coral spp."
+"481","Isophyllia.sinuosa","Cnidaria","Anthozoa","Scleractinia","Faviidae","Isophyllia","sinuosa",NA,"Stony Coral spp."
+"482","Madracis.auretenra","Cnidaria","Anthozoa","Scleractinia","Pocilloporidae","Madracis","auretenra",NA,"Stony Coral spp."
+"483","Madracis.carmabi","Cnidaria","Anthozoa","Scleractinia","Pocilloporidae","Madracis","carmabi",NA,"Stony Coral spp."
+"484","Madracis.decactis","Cnidaria","Anthozoa","Scleractinia","Pocilloporidae","Madracis","decactis",NA,"Stony Coral spp."
+"485","Madracis.formosa","Cnidaria","Anthozoa","Scleractinia","Pocilloporidae","Madracis","formosa",NA,"Stony Coral spp."
+"486","Madracis.pharensis","Cnidaria","Anthozoa","Scleractinia","Pocilloporidae","Madracis","pharensis",NA,"Stony Coral spp."
+"487","Madracis.senaria","Cnidaria","Anthozoa","Scleractinia","Pocilloporidae","Madracis","senaria",NA,"Stony Coral spp."
+"488","Madracis.spp.","Cnidaria","Anthozoa","Scleractinia","Pocilloporidae","Madracis","",NA,"Stony Coral spp."
+"489","Manicina.areolata","Cnidaria","Anthozoa","Scleractinia","Faviidae","Manicina","areolata",NA,"Stony Coral spp."
+"490","Meandrina.meandrites","Cnidaria","Anthozoa","Scleractinia","Meandrinidae","Meandrina","meandrites",NA,"Stony Coral spp."
+"491","Montastraea.cavernosa","Cnidaria","Anthozoa","Scleractinia","Montastraeidae","Montastraea","cavernosa",NA,"Stony Coral spp."
+"492","Mussa.angulosa","Cnidaria","Anthozoa","Scleractinia","Faviidae","Mussa","angulosa",NA,"Stony Coral spp."
+"493","Mycetophyllia.aliciae","Cnidaria","Anthozoa","Scleractinia","Faviidae","Mycetophyllia","aliciae",NA,"Stony Coral spp."
+"494","Mycetophyllia.danaana","Cnidaria","Anthozoa","Scleractinia","Faviidae","Mycetophyllia","danaana",NA,"Stony Coral spp."
+"495","Mycetophyllia.ferox","Cnidaria","Anthozoa","Scleractinia","Faviidae","Mycetophyllia","ferox",NA,"Stony Coral spp."
+"496","Mycetophyllia.lamarckiana","Cnidaria","Anthozoa","Scleractinia","Faviidae","Mycetophyllia","lamarckiana",NA,"Stony Coral spp."
+"497","Mycetophyllia.spp.","Cnidaria","Anthozoa","Scleractinia","Faviidae","Mycetophyllia","",NA,"Stony Coral spp."
+"498","Oculina.diffusa","Cnidaria","Anthozoa","Scleractinia","Oculinidae","Oculina","diffusa",NA,"Stony Coral spp."
+"499","Orbicella.annularis","Cnidaria","Anthozoa","Scleractinia","Merulinidae","Orbicella","annularis",NA,"Stony Coral spp."
+"500","Orbicella.annularis..complex.","Cnidaria","Anthozoa","Scleractinia","Merulinidae","Orbicella","annularis",NA,"Stony Coral spp."
+"501","Orbicella.faveolata","Cnidaria","Anthozoa","Scleractinia","Merulinidae","Orbicella","faveolata",NA,"Stony Coral spp."
+"502","Orbicella.franksi","Cnidaria","Anthozoa","Scleractinia","Merulinidae","Orbicella","franksi",NA,"Stony Coral spp."
+"503","Porites.astreoides","Cnidaria","Anthozoa","Scleractinia","Poritidae","Porites","astreoides",NA,"Stony Coral spp."
+"504","Porites.colonensis","Cnidaria","Anthozoa","Scleractinia","Poritidae","Porites","colonensis",NA,"Stony Coral spp."
+"505","Porites.divaricata","Cnidaria","Anthozoa","Scleractinia","Poritidae","Porites","divaricata",NA,"Stony Coral spp."
+"506","Porites.furcata","Cnidaria","Anthozoa","Scleractinia","Poritidae","Porites","furcata",NA,"Stony Coral spp."
+"507","Porites.porites","Cnidaria","Anthozoa","Scleractinia","Poritidae","Porites","porites",NA,"Stony Coral spp."
+"508","Pseudodiploria.clivosa","Cnidaria","Anthozoa","Scleractinia","Faviidae","Pseudodiploria","clivosa",NA,"Stony Coral spp."
+"509","Pseudodiploria.strigosa","Cnidaria","Anthozoa","Scleractinia","Faviidae","Pseudodiploria","strigosa",NA,"Stony Coral spp."
+"510","Scolymia.cubensis","Cnidaria","Anthozoa","Scleractinia","Faviidae","Scolymia","cubensis",NA,"Stony Coral spp."
+"511","Scolymia.spp.","Cnidaria","Anthozoa","Scleractinia","Faviidae","Scolymia","",NA,"Stony Coral spp."
+"512","Siderastrea.radians","Cnidaria","Anthozoa","Scleractinia","Siderastreidae","Siderastrea","radians",NA,"Stony Coral spp."
+"513","Siderastrea.siderea","Cnidaria","Anthozoa","Scleractinia","Siderastreidae","Siderastrea","siderea",NA,"Stony Coral spp."
+"514","Solenastrea.bournoni","Cnidaria","Anthozoa","Scleractinia","Scleractinia incertae sedis","Solenastrea","bournoni",NA,"Stony Coral spp."
+"515","Stephanocoenia.intersepta","Cnidaria","Anthozoa","Scleractinia","Astrocoeniidae","Stephanocoenia","intersepta",NA,"Stony Coral spp."
+"516","Stony.Coral.spp.","Cnidaria","Anthozoa","Scleractinia","","","",NA,"Stony Coral spp."
+"517","Millepora.alcicornis","Cnidaria","Hydrozoa","Anthoathecata","Milleporidae","Millepora","alcicornis",NA,"Stony Coral spp."
+"518","Millepora.complanata","Cnidaria","Hydrozoa","Anthoathecata","Milleporidae","Millepora","complanata",NA,"Stony Coral spp."
+"519","Millepora.spp.","Cnidaria","Hydrozoa","Anthoathecata","Milleporidae","Millepora","",NA,"Stony Coral spp."
+"520","Millepora.squarrosa","Cnidaria","Hydrozoa","Anthoathecata","Milleporidae","Millepora","squarrosa",NA,"Stony Coral spp."
+"521","Stylaster.roseus","Cnidaria","Hydrozoa","Anthoathecata","Stylasteridae","Stylaster","roseus",NA,"Stony Coral spp."
+"522","Stony.Corals..total.","Cnidaria","","","","","",NA,"Benthic Category"
+"523","Stony.Corals..total...diseased.col..","Cnidaria","","","","","",NA,"Stony Coral (#DC)"
+"524","Stony.Corals..total..col..","Cnidaria","","","","","",NA,"Stony Coral (#col.)"
+"525","Partially.bleached.coral..total.","Cnidaria","","","","","",NA,"Stony Coral (BPB)"
+"526","Recently.dead.coral..total.","Cnidaria","","","","","",NA,"Stony Coral (RDC)"
+"527","Condominium.spp.","Chordata","Ascidiacea","Aplousobranchia","Protopolyclinidae","Condominium","",NA,"Zoanthid spp."
+"528","Palythoa.grandis","Cnidaria","Anthozoa","Zoantharia","Sphenopidae","Palythoa","grandis",NA,"Zoanthid spp."
+"529","Palythoa.caribaeorum","Cnidaria","Anthozoa","Zoantharia","Sphenopidae","Palythoa","caribaeorum",NA,"Zoanthid spp."
+"530","Zoanthids..total.","Cnidaria","Anthozoa","Zoantharia","","","",NA,"Benthic Category"
+"531","Acanthurus.bahianus","Chordata","Actinopterygii","Perciformes","Acanthuridae","Acanthurus","bahianus","",NA
+"532","Acanthurus.tractus","Chordata","Actinopterygii","Perciformes","Acanthuridae","Acanthurus","tractus","",NA
+"533","Alectis.ciliaris","Chordata","Actinopterygii","Perciformes","Carangidae","Alectis","ciliaris","",NA
+"534","Carcharhinus.limbatus","Chordata","Elasmobranchii","Carcharhiniformes","Carcharhinidae","Carcharhinus","limbatus","",NA
+"535","Carcharhinus.perezii","Chordata","Elasmobranchii","Carcharhiniformes","Carcharhinidae","Carcharhinus","perezii","",NA
+"536","Elagatis.bipinnulata","Chordata","Actinopterygii","Perciformes","Carangidae","Elagatis","bipinnulata","",NA
+"537","Epinephelus.itajara","Chordata","Actinopterygii","Perciformes","Serranidae","Epinephelus","itajara","Groupers",NA
+"538","Haemulon.plumierii","Chordata","Actinopterygii","Perciformes","Haemulidae","Haemulon","plumierii","",NA
+"539","Hypanus.americanus","Chordata","Elasmobranchii","Myliobatiformes","Dasyatidae","Hypanus","americanus","",NA
+"540","Istiophorus.albicans","Chordata","Actinopterygii","Perciformes","Istiophoridae","Istiophorus","albicans","",NA
+"541","Negaprion.brevirostris","Chordata","Elasmobranchii","Carcharhiniformes","Carcharhinidae","Negaprion","brevirostris","",NA
+"542","Seriola.rivoliana","Chordata","Actinopterygii","Perciformes","Carangidae","Seriola","rivoliana","",NA
+"543","Trachinotus.falcatus","Chordata","Actinopterygii","Perciformes","Carangidae","Trachinotus","falcatus","",NA
