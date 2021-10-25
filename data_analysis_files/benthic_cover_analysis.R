@@ -1,0 +1,62 @@
+# benthic coral cover analysis 
+
+# Import Libraries 
+#library(multcompView)
+#library("ggpubr")
+library(tidyverse)
+#library(plyr)
+#library(dplyr)
+#library(broom)
+library(ggplot2)
+
+# import datasets
+# Load Data 
+benthic_data3 <- read.csv('~/Desktop/GITHUB/PR_Fish/raw_data3/PRCRMP_Benthic-sessile_data_1999-2020_(updated_4-10-2020).csv', fileEncoding="latin1")
+abundance_data3 <- read.csv('~/Desktop/GITHUB/PR_Fish/raw_data3/PRCRMP_Fish-inverts_abundance_data_1999-2020_(updated_04-10-2020).csv', fileEncoding="latin1")
+biomass_data3 <- read.csv('~/Desktop/GITHUB/PR_Fish/raw_data3/PRCRMP_Fish-inverts_biomass_data_1999-2020_(updated_04-10-2020).csv', fileEncoding="latin1")
+size_frequency_abundance_data3 <- read.csv('~/Desktop/GITHUB/PR_Fish/raw_data3/PRCRMP_Fish-inverts_size-frequency_abundance_data_1999-2020_(updated_10-04-2020).csv', fileEncoding="latin1")
+site_classification_database3 <- read.csv('~/Desktop/GITHUB/PR_Fish/raw_data3/PRCRMP_Site_Classification_Database_(updated_3-8-2020).csv', fileEncoding="latin1")
+species_info <- read.csv('~/Desktop/GITHUB/PR_Fish/data_analysis_files/species_info.csv')
+#clean datasets
+
+# Clean data
+abundance_data3$DEPTH.ZONE <- abundance_data3$DEPTH.ZONE %>% 
+  gsub("intermediate", "Intermediate", .) %>%
+  gsub("shallow", "Shallow", .) %>%
+  gsub("very shallow", "Very Shallow", .) %>%
+  gsub("very Shallow", "Very Shallow", .) 
+
+biomass_data3$DEPTH.ZONE <- biomass_data3$DEPTH.ZONE %>% 
+  gsub("intermediate", "Intermediate", .) %>%
+  gsub("shallow", "Shallow", .) %>%
+  gsub("very shallow", "Very Shallow", .) %>%
+  gsub("very Shallow", "Very Shallow", .) 
+
+abundance_data3$SITE.NAME <- abundance_data3$SITE.NAME %>% 
+  gsub("Berbera", "Berbería", .)  %>%
+  gsub("Caa Gorda", "Caña Gorda", .) %>%
+  gsub("Windward Reef ", "Windward Reef", .) %>%
+  gsub("West Caballo Blanco (2001)", "West Caballo Blanco", .) %>%
+  gsub("Maria Langa 5m ", "Maria Langa 5m", .) %>%
+  gsub("Canal Luis Pea", "Canal Luis Peña", .) 
+
+biomass_data3$SITE.NAME <- biomass_data3$SITE.NAME %>% 
+  gsub("Berbera", "Berbería", .)  %>%
+  gsub("Caa Gorda", "Caña Gorda", .) %>%
+  gsub("Windward Reef ", "Windward Reef", .) %>%
+  gsub("West Caballo Blanco (2001)", "West Caballo Blanco", .) %>%
+  gsub("Maria Langa 5m ", "Maria Langa 5m", .) %>%
+  gsub("Canal Luis Pea", "Canal Luis Peña", .) 
+
+benthic_data3$SITE.NAME <- benthic_data3$SITE.NAME %>% 
+  gsub("Berbera", "Berbería", .)  %>%
+  gsub("Caa Gorda", "Caña Gorda", .) %>%
+  gsub("Windward Reef ", "Windward Reef", .) %>%
+  gsub("West Caballo Blanco (2001)", "West Caballo Blanco", .) %>%
+  gsub("Maria Langa 5m ", "Maria Langa 5m", .) %>%
+  gsub("Canal Luis Pea", "Canal Luis Peña", .) 
+
+# 
+
+
+
