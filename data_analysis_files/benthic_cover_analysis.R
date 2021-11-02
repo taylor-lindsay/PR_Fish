@@ -66,23 +66,33 @@ benthic_data3$SITE.NAME <- benthic_data3$SITE.NAME %>%
   gsub("Maria Langa 5m ", "Maria Langa 5m", .) %>%
   gsub("Canal Luis PeÐa", "Canal Luis Peña", .) 
 
+
+
 # Save just the columns I want & merge with site info 
 benthic_totals <- benthic_data3 %>% dplyr:: select(grep("total", names(benthic_data3)),
       grep("YEAR", names(benthic_data3)),
       grep("LOCATION", names(benthic_data3)),
       grep("SITE.NAME", names(benthic_data3))) %>%
-      full_join(., site_classification_database3, 
+      inner_join(., site_classification_database3, 
             by = "SITE.NAME")
     
+
+
+
 # Graph average coral cover by year 
 
-benthic_totals_means <- benthic_totals %>% filter(YEAR)
+benthic_totals_means <- benthic_totals_sites %>% 
+  filter(!is.na(YEAR)) %>%
+  filter(!.$Abiotic..total. == "") 
+
+write_csv()
 
 
+#%>%
+  group_by(YEAR,SITE.NAME) %>%
+  summarise_all(mean)
 
-
-
-
+aggregate(benthic_totals)
 
 # filter down to just Cabo Rojo
 # benthic_cabo_rojo <- benthic_totals %>% filter(LOCATION == "Cabo Rojo")
@@ -93,5 +103,5 @@ benthic_totals_means <- benthic_totals %>% filter(YEAR)
   #else {benthic_cabo_rojo$MPA = "no"} benthic_cabo_rojo <- benthic_cabo_rojo %>%
   #mutate(MPA = case_when(
   #  benthic_cabo_rojo$SITE.NAME == "Resuellos" ~ "Recovered" ))
-
+sapply(benthic_data3, class)
 
