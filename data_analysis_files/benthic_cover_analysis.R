@@ -1,5 +1,7 @@
 # benthic coral cover analysis 
 
+# Libraries & Load Data ---------------------------------------------------
+
 # Import Libraries 
 #library(multcompView)
 #library("ggpubr")
@@ -11,97 +13,58 @@ library(ggplot2)
 
 # import datasets
 # Load Data 
-benthic_data3 <- read.csv('~/Desktop/GITHUB/PR_Fish/raw_data3/PRCRMP_Benthic-sessile_data_1999-2020_(updated_4-10-2020).csv', fileEncoding="latin1")
-abundance_data3 <- read.csv('~/Desktop/GITHUB/PR_Fish/raw_data3/PRCRMP_Fish-inverts_abundance_data_1999-2020_(updated_04-10-2020).csv', fileEncoding="latin1")
-biomass_data3 <- read.csv('~/Desktop/GITHUB/PR_Fish/raw_data3/PRCRMP_Fish-inverts_biomass_data_1999-2020_(updated_04-10-2020).csv', fileEncoding="latin1")
-size_frequency_abundance_data3 <- read.csv('~/Desktop/GITHUB/PR_Fish/raw_data3/PRCRMP_Fish-inverts_size-frequency_abundance_data_1999-2020_(updated_10-04-2020).csv', fileEncoding="latin1")
-site_classification_database3 <- read.csv('~/Desktop/GITHUB/PR_Fish/raw_data3/PRCRMP_Site_Classification_Database_(updated_3-8-2020).csv', fileEncoding="latin1")
+
+benthic_data3 <- read.csv('~/Desktop/GITHUB/PR_Fish/raw_data_clean/PRCRMP_Benthic-sessile_data_1999-2020clean.csv', stringsAsFactors = FALSE)
+abundance_data3 <- read.csv('~/Desktop/GITHUB/PR_Fish/raw_data_clean/PRCRMP_Fish-inverts_abundance_data_1999-2020clean.csv', stringsAsFactors = FALSE)
+biomass_data3 <- read.csv('~/Desktop/GITHUB/PR_Fish/raw_data_clean/PRCRMP_Fish-inverts_biomass_data_1999-2020clean.csv', stringsAsFactors = FALSE)
+size_frequency_abundance_data3 <- read.csv('~/Desktop/GITHUB/PR_Fish/raw_data_clean/PRCRMP_Fish-inverts_size-frequency_abundance_data_1999-2020clean.csv', stringsAsFactors = FALSE)
+site_classification_database3 <- read.csv('~/Desktop/GITHUB/PR_Fish/raw_data_clean/PRCRMP_Site_Classification_Database_clean.csv')
 species_info <- read.csv('~/Desktop/GITHUB/PR_Fish/data_analysis_files/species_info.csv')
-#clean datasets
 
-# Clean data labels 
-abundance_data3$DEPTH.ZONE <- abundance_data3$DEPTH.ZONE %>% 
-  gsub("intermediate", "Intermediate", .) %>%
-  gsub("shallow", "Shallow", .) %>%
-  gsub("very shallow", "Very Shallow", .) %>%
-  gsub("very Shallow", "Very Shallow", .) 
+#Find the class of each data point 
+#sapply(benthic_data3, class)
 
-biomass_data3$DEPTH.ZONE <- biomass_data3$DEPTH.ZONE %>% 
-  gsub("intermediate", "Intermediate", .) %>%
-  gsub("shallow", "Shallow", .) %>%
-  gsub("very shallow", "Very Shallow", .) %>%
-  gsub("very Shallow", "Very Shallow", .) 
+# Prep for graphing  ----------------------------------------------------------
 
-abundance_data3$SITE.NAME <- abundance_data3$SITE.NAME %>% 
-  gsub("Berbera", "Berbería", .)  %>%
-  gsub("Caa Gorda", "Caña Gorda", .) %>%
-  gsub("Windward Reef ", "Windward Reef", .) %>%
-  gsub("West Caballo Blanco (2001)", "West Caballo Blanco", .) %>%
-  gsub("Maria Langa 5m ", "Maria Langa 5m", .) %>%
-  gsub("Canal Luis Pea", "Canal Luis Peña", .) 
-
-biomass_data3$SITE.NAME <- biomass_data3$SITE.NAME %>% 
-  gsub("Berbera", "Berbería", .)  %>%
-  gsub("Caa Gorda", "Caña Gorda", .) %>%
-  gsub("Windward Reef ", "Windward Reef", .) %>%
-  gsub("West Caballo Blanco (2001)", "West Caballo Blanco", .) %>%
-  gsub("Maria Langa 5m ", "Maria Langa 5m", .) %>%
-  gsub("Canal Luis Pea", "Canal Luis Peña", .) 
-
-names(site_classification_database3) <- toupper(names(site_classification_database3))
-
-site_classification_database3$SITE.NAME <- site_classification_database3$SITE.NAME %>% 
-  gsub("Berbera", "Berbería", .)  %>%
-  gsub("Caa Gorda", "Caña Gorda", .) %>%
-  gsub("Windward Reef ", "Windward Reef", .) %>%
-  gsub("West Caballo Blanco (2001)", "West Caballo Blanco", .) %>%
-  gsub("Maria Langa 5m ", "Maria Langa 5m", .) %>%
-  gsub("Canal Luis Pea", "Canal Luis Peña", .) 
-
-benthic_data3$SITE.NAME <- benthic_data3$SITE.NAME %>% 
-  gsub("BerberÕa", "Berbería", .)  %>%
-  gsub("CaÐa Gorda", "Caña Gorda", .) %>%
-  gsub("Windward Reef ", "Windward Reef", .) %>%
-  gsub("West Caballo Blanco (2001)", "West Caballo Blanco", .) %>%
-  gsub("Maria Langa 5m ", "Maria Langa 5m", .) %>%
-  gsub("Canal Luis PeÐa", "Canal Luis Peña", .) 
-
-
-
-# Save just the columns I want & merge with site info 
-benthic_totals <- benthic_data3 %>% dplyr:: select(grep("total", names(benthic_data3)),
-      grep("YEAR", names(benthic_data3)),
-      grep("LOCATION", names(benthic_data3)),
-      grep("SITE.NAME", names(benthic_data3))) %>%
-      inner_join(., site_classification_database3, 
-            by = "SITE.NAME")
-    
-
-
-
-# Graph average coral cover by year 
-
-benthic_totals_means <- benthic_totals_sites %>% 
+#Find the mean for each location & year 
+benthic_means <- benthic_data3 %>% 
   filter(!is.na(YEAR)) %>%
-  filter(!.$Abiotic..total. == "") 
-
-write_csv()
-
-
-#%>%
+  #filter(!.$Abiotic..total. == "") %>%
   group_by(YEAR,SITE.NAME) %>%
   summarise_all(mean)
 
-aggregate(benthic_totals)
+# Seperate just the totals, and join with site data 
+benthic_means_totals <- benthic_means %>% dplyr:: select(grep("total", names(benthic_means)),
+                                                   grep("YEAR", names(benthic_means)),
+                                                   grep("SITE.NAME", names(benthic_means))) %>%
+  inner_join(., site_classification_database3, 
+             by = "SITE.NAME") 
 
-# filter down to just Cabo Rojo
-# benthic_cabo_rojo <- benthic_totals %>% filter(LOCATION == "Cabo Rojo")
 
-# add MPA data column
-#benthic_cabo_rojo$MPA <- 
-#if (benthic_cabo_rojo$SITE.NAME == "Resuellos") {benthic_cabo_rojo$MPA = "Yes"} 
-  #else {benthic_cabo_rojo$MPA = "no"} benthic_cabo_rojo <- benthic_cabo_rojo %>%
-  #mutate(MPA = case_when(
-  #  benthic_cabo_rojo$SITE.NAME == "Resuellos" ~ "Recovered" ))
-sapply(benthic_data3, class)
 
+
+
+# Graphing Benthic Cover----------------------------------------------------------------
+
+
+#benthic_means_totals %>% select(YEAR, SITE.NAME, Stony.Corals..total., Macroalgae..total., )
+ggplot(benthic_means_totals) +
+  geom_point(aes(YEAR, Stony.Corals..total.),stat = "summary", fun = "mean", color = "red") +
+  geom_smooth(aes(YEAR, Stony.Corals..total.), method = "lm", se = FALSE, color = "red") +
+  geom_point(aes(YEAR, Macroalgae..total.),stat = "summary", fun = "mean", color = "green") + 
+  geom_smooth(aes(YEAR, Macroalgae..total.), method = "lm", se = FALSE, color = "green")
+
+lm_stony_corals_total <- lm(Stony.Corals..total., Macroalgae..total. ~ YEAR, data = benthic_data3)
+summary(lm_stony_corals_total)
+
+
+# Graphing Parrot Fish abundance over time 
+ggplot(parrotfish_abundance_year, aes(YEAR, mean)) +
+  geom_line(linetype = "dashed", color="red") +
+  geom_point() +
+  theme_light() + 
+  #  facet_wrap(~REGION) +
+  geom_smooth(method = "lm", se = FALSE, color="red") +
+  labs(y="Mean Abundance (per 30m^2)", x = "Year") +
+  geom_errorbar(aes(ymin=mean-se, ymax=mean+se), width=.2,
+                position=position_dodge(0.05))
