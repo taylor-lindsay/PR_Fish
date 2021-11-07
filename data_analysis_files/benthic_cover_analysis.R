@@ -6,7 +6,7 @@
 #library(multcompView)
 #library("ggpubr")
 library(tidyverse)
-library(plyr)
+#library(plyr)
 library(dplyr)
 library(broom)
 library(ggplot2)
@@ -26,13 +26,7 @@ species_info <- read.csv('~/Desktop/GITHUB/PR_Fish/data_analysis_files/species_i
 
 # Prep for graphing  ----------------------------------------------------------
 
-#Find the mean for each location & year 
-benthic_means <- benthic_data3 %>% 
-  filter(!is.na(YEAR)) %>%
-  #filter(!.$Abiotic..total. == "") %>%
-  group_by(YEAR,SITE.NAME) %>%
-  summarise_all(mean)
-
+# pivot benthic 3 data 
 benthic_longer <- benthic_data3%>% dplyr:: select(grep("^.+total.$", names(benthic_data3)),
                                                          grep("YEAR", names(benthic_data3)),
                                                          grep("SITE.NAME", names(benthic_data3)))%>%
@@ -40,62 +34,37 @@ benthic_longer <- benthic_data3%>% dplyr:: select(grep("^.+total.$", names(benth
   inner_join(., site_classification_database3, 
              by = "SITE.NAME")
 
+#Find the mean for each location & year 
+benthic_means <- benthic_longer %>% 
+  filter(!is.na(percent)) %>%
+  group_by(YEAR, type) %>%
+  summarize(., mean_percent = mean(percent))
 
-# Seperate just the totals, and join with site data 
-benthic_means_totals <- benthic_means %>% dplyr:: select(grep("^.+total.$", names(benthic_means)),
-                                                   grep("YEAR", names(benthic_means)),
-                                                   grep("SITE.NAME", names(benthic_means)))%>%
-  pivot_longer(cols = ends_with(c("total.", "erect.", "encrusting.")), names_to = "type", values_to = "percent") %>%
-  inner_join(., site_classification_database3, 
-             by = "SITE.NAME")
-
-# linear model
+# Linear models of benthos cover over time  -----------------------------------------
 
 # linear model output for each benthos type USING MEANS
-by_type <- group_by(benthic_means_totals, type)
-lm_benthic_totals <- do(by_type, glance(lm(YEAR ~ percent, data = .)))
+by_type_means <- group_by(benthic_means_totals, type)
+lm_benthic_totals <- do(by_type_means, glance(lm(YEAR ~ percent, data = .)))
 
 # linear model output for each benthos type USING ALL DATA
-by_type <- group_by(benthic_means_totals, type)
-lm_benthic_totals <- do(by_type, glance(lm(YEAR ~ percent, data = .)))
+by_type <- group_by(benthic_longer, type)
+lm_benthic_totals_output_alldata <- do(by_type, glance(lm(YEAR ~ percent, data = .)))
+write_csv(lm_benthic_totals_output_alldata, '~/Desktop/GITHUB/PR_Fish/Results/lm_benthic_totals_output_alldata.csv')
 
+# interpretation of results: 
+# The following cover types decreased significantly over the course of the study
+# turf algae, recently dead coral, stony corals total, abiotic total
+# The following cover types increased significantly over the course of the study 
+# macroalgae, Peyssonneliaceae, CCA, sponges, cyanobacteria 
 
-# Graphing Benthic Cover----------------------------------------------------------------
-
-
-#benthic_means_totals %>% select(YEAR, SITE.NAME, Stony.Corals..total., Macroalgae..total., )
-ggplot(benthic_means_totals) +
-  geom_point(aes(YEAR, Stony.Corals..total.),stat = "summary", fun = "mean", color = "red") +
-  geom_smooth(aes(YEAR, Stony.Corals..total.), method = "lm", se = FALSE, color = "red") +
-  geom_point(aes(YEAR, Macroalgae..total.),stat = "summary", fun = "mean", color = "green") + 
-  geom_smooth(aes(YEAR, Macroalgae..total.), method = "lm", se = FALSE, color = "green") +
-  geom_point(aes(YEAR, Abiotic..total.),stat = "summary", fun = "mean", color = "black") +
-  geom_smooth(aes(YEAR, Abiotic..total.), method = "lm", se = FALSE, color = "black") +
-  geom_point(aes(YEAR, Abiotic..total.),stat = "summary", fun = "mean", color = "black") +
-  geom_smooth(aes(YEAR, Abiotic..total.), method = "lm", se = FALSE, color = "black") +
-  geom_point(aes(YEAR, CCA..total. ),stat = "summary", fun = "mean", color = "pink") +
-  geom_smooth(aes(YEAR, CCA..total. ), method = "lm", se = FALSE, color = "pink") +
-  geom_point(aes(YEAR, Turf.Algae..total.),stat = "summary", fun = "mean", color = "yellow") +
-  geom_smooth(aes(YEAR, Turf.Algae..total.), method = "lm", se = FALSE, color = "yellow") +
-  geom_point(aes(YEAR, Octocorals..total.erect.),stat = "summary", fun = "mean", color = "orange") +
-  geom_smooth(aes(YEAR, Octocorals..total.erect.), method = "lm", se = FALSE, color = "orange") 
-
-benthic_means_totals %>%
-  group_by(YEAR) %>%
-  summary(mean) %>%
-  write_csv(benthic_means_totals, '~/Desktop/benthic_means_totals.csv')
-
-
-lm_stony_corals_total <- lm(YEAR ~ Stony.Corals..total., data = benthic_data3)
-summary <- summary(lm_stony_corals_total)
-
-# Graphing Parrot Fish abundance over time 
-ggplot(parrotfish_abundance_year, aes(YEAR, mean)) +
-  geom_line(linetype = "dashed", color="red") +
+# graph benthos cover by type 
+graph_benthic_types <- ggplot(benthic_means, aes(YEAR, mean_percent)) +
   geom_point() +
-  theme_light() + 
-  #  facet_wrap(~REGION) +
-  geom_smooth(method = "lm", se = FALSE, color="red") +
-  labs(y="Mean Abundance (per 30m^2)", x = "Year") +
-  geom_errorbar(aes(ymin=mean-se, ymax=mean+se), width=.2,
-                position=position_dodge(0.05))
+  geom_smooth( method = "lm", se = FALSE) +
+  facet_wrap(~ type, scales = "free") +
+  labs(y="Mean Percent Cover", x = "Year")
+  
+ggsave("graph_benthic_types.jpg", width = 10,
+       height = 5, plot = graph_benthic_types, path = '~/Desktop/GITHUB/PR_Fish/Results/')
+
+# note that multiple graphs have a peak around 2005/2006, there was a bleaching event in 
