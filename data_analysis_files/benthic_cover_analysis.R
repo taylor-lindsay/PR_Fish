@@ -6,9 +6,9 @@
 #library(multcompView)
 #library("ggpubr")
 library(tidyverse)
-#library(plyr)
-#library(dplyr)
-#library(broom)
+library(plyr)
+library(dplyr)
+library(broom)
 library(ggplot2)
 
 # import datasets
@@ -33,15 +33,31 @@ benthic_means <- benthic_data3 %>%
   group_by(YEAR,SITE.NAME) %>%
   summarise_all(mean)
 
-# Seperate just the totals, and join with site data 
-benthic_means_totals <- benthic_means %>% dplyr:: select(grep("total", names(benthic_means)),
-                                                   grep("YEAR", names(benthic_means)),
-                                                   grep("SITE.NAME", names(benthic_means))) %>%
+benthic_longer <- benthic_data3%>% dplyr:: select(grep("^.+total.$", names(benthic_data3)),
+                                                         grep("YEAR", names(benthic_data3)),
+                                                         grep("SITE.NAME", names(benthic_data3)))%>%
+  pivot_longer(cols = ends_with(c("total.", "erect.", "encrusting.")), names_to = "type", values_to = "percent") %>%
   inner_join(., site_classification_database3, 
-             by = "SITE.NAME") 
+             by = "SITE.NAME")
 
 
+# Seperate just the totals, and join with site data 
+benthic_means_totals <- benthic_means %>% dplyr:: select(grep("^.+total.$", names(benthic_means)),
+                                                   grep("YEAR", names(benthic_means)),
+                                                   grep("SITE.NAME", names(benthic_means)))%>%
+  pivot_longer(cols = ends_with(c("total.", "erect.", "encrusting.")), names_to = "type", values_to = "percent") %>%
+  inner_join(., site_classification_database3, 
+             by = "SITE.NAME")
 
+# linear model
+
+# linear model output for each benthos type USING MEANS
+by_type <- group_by(benthic_means_totals, type)
+lm_benthic_totals <- do(by_type, glance(lm(YEAR ~ percent, data = .)))
+
+# linear model output for each benthos type USING ALL DATA
+by_type <- group_by(benthic_means_totals, type)
+lm_benthic_totals <- do(by_type, glance(lm(YEAR ~ percent, data = .)))
 
 
 # Graphing Benthic Cover----------------------------------------------------------------
@@ -52,11 +68,26 @@ ggplot(benthic_means_totals) +
   geom_point(aes(YEAR, Stony.Corals..total.),stat = "summary", fun = "mean", color = "red") +
   geom_smooth(aes(YEAR, Stony.Corals..total.), method = "lm", se = FALSE, color = "red") +
   geom_point(aes(YEAR, Macroalgae..total.),stat = "summary", fun = "mean", color = "green") + 
-  geom_smooth(aes(YEAR, Macroalgae..total.), method = "lm", se = FALSE, color = "green")
+  geom_smooth(aes(YEAR, Macroalgae..total.), method = "lm", se = FALSE, color = "green") +
+  geom_point(aes(YEAR, Abiotic..total.),stat = "summary", fun = "mean", color = "black") +
+  geom_smooth(aes(YEAR, Abiotic..total.), method = "lm", se = FALSE, color = "black") +
+  geom_point(aes(YEAR, Abiotic..total.),stat = "summary", fun = "mean", color = "black") +
+  geom_smooth(aes(YEAR, Abiotic..total.), method = "lm", se = FALSE, color = "black") +
+  geom_point(aes(YEAR, CCA..total. ),stat = "summary", fun = "mean", color = "pink") +
+  geom_smooth(aes(YEAR, CCA..total. ), method = "lm", se = FALSE, color = "pink") +
+  geom_point(aes(YEAR, Turf.Algae..total.),stat = "summary", fun = "mean", color = "yellow") +
+  geom_smooth(aes(YEAR, Turf.Algae..total.), method = "lm", se = FALSE, color = "yellow") +
+  geom_point(aes(YEAR, Octocorals..total.erect.),stat = "summary", fun = "mean", color = "orange") +
+  geom_smooth(aes(YEAR, Octocorals..total.erect.), method = "lm", se = FALSE, color = "orange") 
 
-lm_stony_corals_total <- lm(Stony.Corals..total., Macroalgae..total. ~ YEAR, data = benthic_data3)
-summary(lm_stony_corals_total)
+benthic_means_totals %>%
+  group_by(YEAR) %>%
+  summary(mean) %>%
+  write_csv(benthic_means_totals, '~/Desktop/benthic_means_totals.csv')
 
+
+lm_stony_corals_total <- lm(YEAR ~ Stony.Corals..total., data = benthic_data3)
+summary <- summary(lm_stony_corals_total)
 
 # Graphing Parrot Fish abundance over time 
 ggplot(parrotfish_abundance_year, aes(YEAR, mean)) +
