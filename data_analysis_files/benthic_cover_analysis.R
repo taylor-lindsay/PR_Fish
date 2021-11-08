@@ -95,24 +95,129 @@ MPA_boxplot_types <- ggplot(MPA_benthic_means, aes(x = STATION.WITHIN.MPA., y = 
 ggsave("MPA_boxplot_types.jpg", width = 8,
        height = 10, plot = MPA_boxplot_types, path = '~/Desktop/GITHUB/PR_Fish/Results/')
 
-# Fish abundance --------------------------------------------------------------------
+# Parotfish abundance --------------------------------------------------------------------
+
+# significantly more OUTSIDE of MPAs! 
 
 # Pivot fish data & join with species & site data
-abundance_longer <- abundance_data3 %>% 
+abundance_longer_fish <- abundance_data3 %>% 
   pivot_longer(!c(LOCATION, YEAR, SAMPLE.CODE,X,REGION,SITE.NAME, DEPTH.ZONE,TRANSECT), names_to = "genus_species", values_to = "abundance") %>%
   inner_join(., site_classification_database3, 
              by = "SITE.NAME") %>%
-  inner_join(., species_info, by = "genus_species")
+  inner_join(., species_info, by = "genus_species") %>%
+  filter(Class == c("Actinopterygii", "Elasmobranchii"))
 
-
-
-
-
-# Save just the Parrot fish species info to a new df
-parrotfish_species <- species_info %>%
+# just look at parrotfish
+parrotfish_species <- abundance_longer_fish %>%
   filter(c(Com.Eco == "Parrotfishes" | Family == "Scaridae"))
 
-# Calculate Parrot fish abundance summaries 
-parrotfish_abundance <- abundance_data3 %>%
-  select(c(1:7, parrotfish_species[,2])) 
+# find the total parotfish per transect across all species 
+parrotfish_species_sum <- parrotfish_species %>%
+  group_by(YEAR, SITE.NAME, TRANSECT) %>%
+  summarise(., total_abundance = sum(abundance)) %>%
+  inner_join(., site_classification_database3, 
+             by = "SITE.NAME") 
 
+# graph boxplot comparing MPA status 
+MPA_parotfish_boxplot <- ggplot(parrotfish_species_sum, aes(x=STATION.WITHIN.MPA., y= total_abundance)) +
+  geom_boxplot() +
+  stat_compare_means(method = "t.test") 
+ggsave("MPA_parotfish_boxplot.jpg", width = 5,
+       height = 8, plot = MPA_parotfish_boxplot, path = '~/Desktop/GITHUB/PR_Fish/Results/')
+
+# find means to determine which is significantly higher 
+parrotfish_species_sum %>%
+  group_by(STATION.WITHIN.MPA.) %>%
+  filter(!is.na(total_abundance)) %>%
+  summarize(mean = mean(total_abundance))
+  
+
+# Grouper Abundance -------------------------------------------------------
+
+# significantly more in MPAS
+
+# just look at grouper
+grouper_species <- abundance_longer_fish %>%
+  filter(Com.Eco == "Groupers")
+
+# find the total parotfish per transect across all species 
+grouper_species_sum <- grouper_species  %>%
+  group_by(YEAR, SITE.NAME, TRANSECT) %>%
+  summarise(., total_abundance = sum(abundance)) %>%
+  inner_join(., site_classification_database3, 
+             by = "SITE.NAME") 
+
+# graph boxplot comparing MPA status 
+MPA_grouper_boxplot <- ggplot(grouper_species_sum, aes(x=STATION.WITHIN.MPA., y= total_abundance)) +
+  geom_boxplot() +
+  stat_compare_means(method = "t.test") 
+
+ggsave("MPA_grouper_boxplot.jpg", width = 5,
+       height = 8, plot = MPA_grouper_boxplot, path = '~/Desktop/GITHUB/PR_Fish/Results/')
+
+# find means to determine which is significantly higher 
+grouper_species_sum %>%
+  group_by(STATION.WITHIN.MPA.) %>%
+  filter(!is.na(total_abundance)) %>%
+  summarize(mean = mean(total_abundance))
+
+
+# Snapper abundance -------------------------------------------------------
+
+# no significant difference 
+
+# just look at grouper
+snapper_species <- abundance_longer_fish %>%
+  filter(Com.Eco == "Snappers")
+
+# find the total parotfish per transect across all species 
+snapper_species_sum <- snapper_species  %>%
+  group_by(YEAR, SITE.NAME, TRANSECT) %>%
+  summarise(., total_abundance = sum(abundance)) %>%
+  inner_join(., site_classification_database3, 
+             by = "SITE.NAME") 
+
+# graph boxplot comparing MPA status 
+MPA_snapper_boxplot <- ggplot(snapper_species_sum, aes(x=STATION.WITHIN.MPA., y= total_abundance)) +
+  geom_boxplot() +
+  stat_compare_means(method = "t.test") 
+
+ggsave("MPA_snapper_boxplot.jpg", width = 5,
+       height = 8, plot = MPA_snapper_boxplot, path = '~/Desktop/GITHUB/PR_Fish/Results/')
+
+# find means to determine which is significantly higher 
+snapper_species_sum %>%
+  group_by(STATION.WITHIN.MPA.) %>%
+  filter(!is.na(total_abundance)) %>%
+  summarize(mean = mean(total_abundance))
+
+
+# Sharks abundance --------------------------------------------------------
+
+# they found a total of 6 sharks over this entire data set, 
+# and they were all found in MPAs, but likely not worth looking at 
+
+# just look at shark
+shark_species <- abundance_longer_fish %>%
+  filter(Class == "Elasmobranchii")
+
+# find the total shark per transect across all species 
+shark_species_sum <- shark_species  %>%
+  group_by(YEAR, SITE.NAME, TRANSECT) %>%
+  summarise(., total_abundance = sum(abundance)) %>%
+  inner_join(., site_classification_database3, 
+             by = "SITE.NAME") 
+
+# graph boxplot comparing MPA status 
+MPA_shark_boxplot <- ggplot(shark_species_sum, aes(x=STATION.WITHIN.MPA., y= total_abundance)) +
+  geom_boxplot() +
+  stat_compare_means(method = "t.test") 
+
+ggsave("MPA_shark_boxplot.jpg", width = 5,
+       height = 8, plot = MPA_shark_boxplot, path = '~/Desktop/GITHUB/PR_Fish/Results/')
+
+# find means to determine which is significantly higher 
+shark_species_sum %>%
+  group_by(STATION.WITHIN.MPA.) %>%
+  filter(!is.na(total_abundance)) %>%
+  summarize(mean = mean(total_abundance))
