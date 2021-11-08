@@ -10,6 +10,7 @@ library(tidyverse)
 library(dplyr)
 library(broom)
 library(ggplot2)
+library(ggpubr)
 
 # import datasets
 # Load Data 
@@ -68,3 +69,50 @@ ggsave("graph_benthic_types.jpg", width = 10,
        height = 5, plot = graph_benthic_types, path = '~/Desktop/GITHUB/PR_Fish/Results/')
 
 # note that multiple graphs have a peak around 2005/2006, there was a bleaching event in 
+
+# MPA status basic analysis  ----------------------------------------------
+
+# filter data to focus on MPAs 
+MPA_benthic_means <- benthic_longer %>% 
+  filter(!is.na(percent)) %>%
+  group_by(YEAR, type, STATION.WITHIN.MPA.) %>%
+  summarize(., mean_percent = mean(percent))
+
+# line graph comparing MPAs for each benthic type 
+ggplot(MPA_benthic_means, aes(x = YEAR, y = mean_percent, color = STATION.WITHIN.MPA.)) +
+  geom_point() + 
+  geom_smooth( method = "lm", se = FALSE) +
+  facet_wrap(~ type, scales = "free")
+
+# boxplots comparing MPAs for each benthic type 
+MPA_boxplot_types <- ggplot(MPA_benthic_means, aes(x = STATION.WITHIN.MPA., y = mean_percent)) +
+  geom_boxplot() + 
+  stat_compare_means(method = "t.test") + 
+  labs(y="Mean Percent Cover", x = "MPA Status") + 
+  facet_wrap(~ type, scales = "free") 
+
+#save boxplots image
+ggsave("MPA_boxplot_types.jpg", width = 8,
+       height = 10, plot = MPA_boxplot_types, path = '~/Desktop/GITHUB/PR_Fish/Results/')
+
+# Fish abundance --------------------------------------------------------------------
+
+# Pivot fish data & join with species & site data
+abundance_longer <- abundance_data3 %>% 
+  pivot_longer(!c(LOCATION, YEAR, SAMPLE.CODE,X,REGION,SITE.NAME, DEPTH.ZONE,TRANSECT), names_to = "genus_species", values_to = "abundance") %>%
+  inner_join(., site_classification_database3, 
+             by = "SITE.NAME") %>%
+  inner_join(., species_info, by = "genus_species")
+
+
+
+
+
+# Save just the Parrot fish species info to a new df
+parrotfish_species <- species_info %>%
+  filter(c(Com.Eco == "Parrotfishes" | Family == "Scaridae"))
+
+# Calculate Parrot fish abundance summaries 
+parrotfish_abundance <- abundance_data3 %>%
+  select(c(1:7, parrotfish_species[,2])) 
+
